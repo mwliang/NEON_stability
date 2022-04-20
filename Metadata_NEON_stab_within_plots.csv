@@ -1,0 +1,26 @@
+variables,descriptions
+domainID,NEON domain
+domain_name,domain name
+siteID,the id of sites
+site_name,site name
+state,US state abbreviations
+MAT_C,mean annual temperature (°„C)
+MAP_mm,mean annual precipitation (mm)
+Temp_s,temperature seasonality (sd*100)
+Prec_s,precipitation seasonality (cv)
+started_year,the first year data collected in this study
+end_year,the last year data collected in this study
+duration,the duration of data collection  in this study
+plotID,plots ID
+latitude,latitude of plots
+longitude,longitude of plots
+elevation_m,elevation (m) of plots
+nlcdClass,the national land cover database vegetation type name
+alpha_div,alpha richness at 1m2 quadrat
+beta_div1,beta diversity across-quadrat
+gamma_div,gamma richness at 400m2 plot
+spe_sta,species stability 
+spe_asy,species asynchrony
+alpha_sta,alpha stability at 1m2 quadrat
+spa_asy1,beta stability across-quadrat
+gamma_sta,gamma stability at 400m2 plot
