@@ -34,6 +34,7 @@ for (i in 1:length (ss)){
 colnames(all_alpha.result) <- c("siteID","intercept", "se_intercept","slope", "se_slope", "t value", "p", "r2m", "r2c")
 #write.csv(all_alpha.result, file = "all_alpha.result.csv")
 
+
 # 2. the relationships of spatial asynchrony to beta diversity across quadrats
 dd <- NEON_stab_plots.data
 ss <- unique(dd$siteID); siteID

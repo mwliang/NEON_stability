@@ -32,7 +32,7 @@ colnames(all_dis.result) <- c("siteID", "intercept", "se_intercept", "estimate",
 
 ## we have calculated the community dissimilarity between two pairwise plots 
 ## examine the relationships between community dissimilarity and the distance between two pairwise plots 
-
+## (Supplementary Fig. 6)
 dist_all.plot <- ggplot(plot_dist.data, aes(y = log10(comdis), x = log10(plot_dist_km))) +
   geom_point(size = 1, alpha = 0.1, color = "gray30") +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1) +

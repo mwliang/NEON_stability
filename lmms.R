@@ -168,7 +168,7 @@ gamma_gamma_sta_4yr.plot <- ggplot(NEON_stab_plots_4yr.data, aes(y = gamma_sta, 
   my_theme
 
 # 1.4 the diversity-stability relationships at population-level 
-# fit the model examining the effects of alpha diversity on species stability (Supplementary Fig. 2A and Table 4)
+# fit the model examining the effects of alpha diversity on species stability (Supplementary Fig. 1A and Table 4)
 alpha_spe_sta_4yr_lmm.fit <- lme(spe_sta ~ alpha_div, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots_4yr.data)
 summary(alpha_spe_sta_4yr_lmm.fit)
 anova(alpha_spe_sta_4yr_lmm.fit)
@@ -209,7 +209,7 @@ alpha_spe_sta_4yr.plot <- ggplot(NEON_stab_plots_4yr.data, aes(y = spe_sta, x = 
   my_theme
 
 # 1.5 the diversity-stability relationships at population-level 
-# fit the model examining the effects of alpha diversity on species asynchrony (Supplementary Fig. 2B and Table 4)
+# fit the model examining the effects of alpha diversity on species asynchrony (Supplementary Fig. 1B and Table 4)
 alpha_spe_asy_4yr_lmm.fit <- lme(spe_asy ~ alpha_div, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots_4yr.data)
 summary(alpha_spe_asy_4yr_lmm.fit)
 anova(alpha_spe_asy_4yr_lmm.fit)

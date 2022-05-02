@@ -224,7 +224,7 @@ map_mat.plot <- ggplot(NEON_stab.data, aes(y = MAP_mm/10, x = latitude, colour =
 
 
 ########################################################################################
-# Supplementary Fig. 5A
+# Supplementary Fig. 4A
 summary(lm(Temp_s ~ MAT_C, data = NEON_stab.data))
 
 Temp_s_mat.plot <- ggplot(NEON_stab.data, aes(y = Temp_s, x = MAT_C, colour = MAP_mm)) +
@@ -251,7 +251,7 @@ Temp_s_mat.plot <- ggplot(NEON_stab.data, aes(y = Temp_s, x = MAT_C, colour = MA
         axis.line = element_line(color = "black", size = 0.5),
         plot.tag = element_text(size = 20, family = "Arial", color = "black"))
 
-# Supplementary Fig. 5B
+# Supplementary Fig. 4B
 summary(lm(Prec_s ~ MAP_mm, data = NEON_stab.data))
 
 Prec_s_map.plot <- ggplot(NEON_stab.data, aes(y = Prec_s, x = MAP_mm, colour = MAP_mm)) +

@@ -96,6 +96,8 @@ fisherC(SEM_env1.m) # Note that SEM_env1.m was still unsaturated (Fisher.c > df)
 AIC(SEM_env1.m)
 dSep(SEM_env1.m) # Note that SEM_env1.m did have a missing significant pathway.
 
+
+
 # And then, we fitted the SEM_env2.m without these non-significant pathways.
 SEM_env2.m <- psem(
   #lm(alpha_div ~  MAP_mm + MAT_C, data = NEON_stab.data), # empirical relationships
@@ -123,6 +125,8 @@ summary(SEM_env2.m) # Note that all pathway were significant.
 fisherC(SEM_env2.m) # Note that SEM_env2.m was still unsaturated (Fisher.c > df) and its significant estimations were very well with p > 0.05.
 AIC(SEM_env2.m)
 dSep(SEM_env2.m) # Note that SEM_env2.m did not have any missing significant pathway.
+
+
 
 # Since both Prec_s and Temp_s had no significant effects on diversity and stability, expect for correlations with MAP and MAT, respectively, 
 # we removed both Prec_s and Temp_s from SEM_env2.m to simplify our model.
@@ -196,6 +200,8 @@ fisherC(sub_SEM.m) # Note that sub_SEM.m was unsaturated (Fisher.c > df) and its
 AIC(sub_SEM.m)
 dSep(sub_SEM.m) # Note that sub_SEM.m had a missing significant pathway.
 
+
+
 # Based on the model fit information, we added the significant pathway
 sub_SEM_1.m <- psem(
   
@@ -213,6 +219,8 @@ summary(sub_SEM_1.m) # Note that all pathway were significant.
 fisherC(sub_SEM_1.m) # Note that sub_SEM_1.m was saturated (Fisher.c < df) and its significant estimations were very well with p > 0.05.
 AIC(sub_SEM_1.m)
 dSep(sub_SEM_1.m) # Note that sub_SEM.m did not have any missing significant pathway.
+
+
 
 # Following up the above process and results, we introduced MAP and MAT into sub_SEM_1.m.
 sub_SEM_2.m <- psem(
@@ -235,6 +243,8 @@ summary(sub_SEM_2.m) # Note that there were two non-significant pathways.
 fisherC(sub_SEM_2.m) # Note that sub_SEM_2.m was saturated (Fisher.c < df) and its significant estimations were very well with p > 0.05.
 AIC(sub_SEM_2.m)
 dSep(sub_SEM_2.m) # Note that sub_SEM_2.m had a missing significant pathway.
+
+
 
 # And then, we remove the non-significant pathway and added the significant pathway based one the model fit information.
 sub_SEM_3.m <- psem(

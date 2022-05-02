@@ -30,7 +30,7 @@ my_scale <- function(x){
 NEON_stab_4yr.data <- NEON_stab.data
 data_4yr <- NEON_stab_4yr.data
 
-# 1.1 mean annual precipitation (MAP) (Figs. 4D-4F, Extended Data Fig. 6, Supplementary Tables 8-11)
+# 1.1 mean annual precipitation (MAP) (Figs. 4D-4F, Extended Data Fig. 7, Supplementary Tables 8-11)
 # the significant (P < 0.05) effects on diversity
 summary(lm(beta_div1 ~ my_scale(MAP_mm), data = NEON_stab_4yr.data))
 summary(lm(tau_div ~ my_scale(MAP_mm), data = NEON_stab_4yr.data))
@@ -51,7 +51,7 @@ for (i in 19:33){
 colnames(all_MAP_4yr.result) <- c("variable", "estimate", "se", "t value", "p", "r2m", "r2c")
 #write.csv(all_MAP_4yr.result, file = "all_MAP_effects_4yr.csv")
 
-# 1.2 mean annual temperature (MAT) (Figs. 4D-4F, Extended Data Fig. 6, Supplementary Tables 8-11)
+# 1.2 mean annual temperature (MAT) (Figs. 4D-4F, Extended Data Fig. 7, Supplementary Tables 8-11)
 # the significant (P < 0.05) effects on diversity
 summary(lm(beta_div1 ~ my_scale(MAT_C)*my_scale(MAP_mm), data = NEON_stab_4yr.data))
 # the significant (P < 0.05) effects on stability
@@ -70,7 +70,7 @@ for (i in 19:33){
 colnames(all_MAT_4yr.result) <- c("variable", "estimate", "se", "t value", "p", "r2m", "r2c")
 #write.csv(all_MAT_4yr.result, file = "all_MAT_effects_4yr.csv")
 
-# 1.3 precipitation seasonality (Prec_s) (Figs. 4D-4F, Extended Data Fig. 6, Supplementary Tables 8-11)
+# 1.3 precipitation seasonality (Prec_s) (Figs. 4D-4F, Extended Data Fig. 7, Supplementary Tables 8-11)
 # the significant (P < 0.05) effects on diversity
 summary(lm(beta_div1 ~ my_scale(Prec_s), data = NEON_stab_4yr.data))
 summary(lm(beta_div2 ~ my_scale(Prec_s), data = NEON_stab_4yr.data))
@@ -93,7 +93,7 @@ for (i in 19:33){
 colnames(all_Prec_s_4yr.result) <- c("variable", "estimate", "se", "t value", "p", "r2m", "r2c")
 #write.csv(all_Prec_s_4yr.result, file = "all_Prec_s_effects_4yr.csv")
 
-# 1.4 temperature seasonality (Temp_s) (Figs. 4D-4F, Extended Data Fig. 6, Supplementary Tables 8-11)
+# 1.4 temperature seasonality (Temp_s) (Figs. 4D-4F, Extended Data Fig. 7, Supplementary Tables 8-11)
 # the significant (P < 0.05) effects on diversity
 summary(lm(beta_div1 ~ my_scale(Temp_s), data = NEON_stab_4yr.data))
 # the significant (P < 0.05) effects on stability
@@ -166,9 +166,9 @@ colnames(all_duration_4yr.result) <- c("variable", "estimate", "se", "t value", 
 #####################################################################################################
 
 # Since results of the diversity-stability relationships were similar, 
-# when we used the different timescales, such as >= 4-year (N=36), >= 5-year (N=24), and >= 6-year (N14). 
+# when we used the different timescales, such as >= 4-year (N=36), >= 5-year (N=24), and >= 6-year (N=14). 
 # Therefore, we plotted the main results in the manuscripts using the >= 4-year observation data
-# in Figs. 4D-4F, Extended Data Fig. 6, Supplementary Tables 8-11. 
+# in Figs. 4D-4F, Extended Data Fig. 7, Supplementary Tables 8-11. 
 ###############################################################################################
 my_theme <- theme(legend.position = "none",
                   panel.grid.major = element_blank(),

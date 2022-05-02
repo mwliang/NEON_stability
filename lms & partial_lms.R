@@ -183,7 +183,7 @@ beta2_4yr.plot <- ggplot(NEON_stab_4yr.data, aes(y = spa_asyn2, x = beta_div2)) 
 ## 1.2 the results based on the linear partial regression
 # extract the residuals from the linear model,
 # we used MAP and MAT because both MAP and MAT has been generally recognized 
-# as the predominant environmental factors along the geographic gradients.
+# as the predominant environmental factors along the climate gradients.
 dd <- NEON_stab_4yr.data
 
 values_4yr_plm.result <- c()
@@ -211,7 +211,7 @@ colnames(values_4yr_plm.result) <- c("alpha_div_p",
 
 NEON_stab_4yr_p.data <- as.data.frame(values_4yr_plm.result)
 
-# 1.2.1 the diversity-stability relationships at alpha scale (Supplementary Fig. 1A and Table 2)
+# 1.2.1 the diversity-stability relationships at alpha scale (Extended Data Fig. 3A and Supplementary Table 2)
 # fit the model examining the effects of alpha diversity on alpha stability
 alpha_4yr_p.lm.fit <- lm(alpha_sta_p ~ alpha_div_p, data = NEON_stab_4yr_p.data)
 summary(alpha_4yr_p.lm.fit)
@@ -232,7 +232,7 @@ alpha_4yr_p.plot <- ggplot(NEON_stab_4yr_p.data, aes(y = alpha_sta_p, x = alpha_
   theme_bw() +
   my_theme
 
-# 1.2.2 the diversity-stability relationships at gamma scale (Supplementary Fig. 1B and Table 2)
+# 1.2.2 the diversity-stability relationships at gamma scale (Extended Data Fig. 3B and Supplementary Table 2)
 # fit the model examining the effects of gamma diversity on gamma stability
 gamma_4yr_p.lm.fit <- lm(gamma_sta_p ~ gamma_div_p, data = NEON_stab_4yr_p.data)
 summary(gamma_4yr_p.lm.fit)
@@ -253,7 +253,7 @@ gamma_4yr_p.plot <- ggplot(NEON_stab_4yr_p.data, aes(y = gamma_sta_p, x = gamma_
   theme_bw() +
   my_theme
 
-# 1.2.3 the diversity-stability relationships at tau scale (Supplementary Fig. 1C and Table 2)
+# 1.2.3 the diversity-stability relationships at tau scale (Extended Data Fig. 3C and Supplementary Table 2)
 # fit the model examining the effects of tau diversity on tau stability
 tau_4yr_p.lm.fit <- lm(tau_sta_p ~ tau_div_p, data = NEON_stab_4yr_p.data)
 summary(tau_4yr_p.lm.fit)
@@ -274,7 +274,7 @@ tau_4yr_p.plot <- ggplot(NEON_stab_4yr_p.data, aes(y = tau_sta_p, x = tau_div_p)
   theme_bw() +
   my_theme
 
-# 1.2.4 the diversity-stability relationships at beta1 scale (Supplementary Fig. 2D and Table 1)
+# 1.2.4 the diversity-stability relationships at beta1 scale (Extended Data Fig. 3D and Supplementary Table 2)
 # fit the model examining the effects of of beta diversity 1 on spatial asynchrony (beta stability 1)
 beta1_4yr_p.lm.fit <- lm(spa_asyn1_p ~ beta_div1_p, data = NEON_stab_4yr_p.data)
 summary(beta1_4yr_p.lm.fit)
@@ -295,7 +295,7 @@ beta1_4yr_p.plot <- ggplot(NEON_stab_4yr_p.data, aes(y = spa_asyn1_p, x = beta_d
   theme_bw() +
   my_theme
 
-# 1.2.5 the diversity-stability relationships at beta2 scale (Supplementary Fig. 1E and Table 2)
+# 1.2.5 the diversity-stability relationships at beta2 scale (Extended Data Fig. 3E and Supplementary Table 2)
 # fit the model examining the effects of of beta diversity 2 on spatial asynchrony (beta stability 2)
 beta2_4yr_p.lm.fit <- lm(spa_asyn2_p ~ beta_div2_p, data = NEON_stab_4yr_p.data)
 summary(beta2_4yr_p.lm.fit)
@@ -323,7 +323,7 @@ beta2_4yr_p.plot <- ggplot(NEON_stab_4yr_p.data, aes(y = spa_asyn2_p, x = beta_d
 NEON_stab_5yr.data <- subset(NEON_stab.data, NEON_stab.data$duration > 4)
 ## 2.1 the results based on the simple linear regression
 
-# 2.1.1 the diversity-stability relationships at alpha scale (Extended Data Fig. 3A and Supplementary Table 1)
+# 2.1.1 the diversity-stability relationships at alpha scale (Extended Data Fig. 5A and Supplementary Table 1)
 # fit the model examining the effects of alpha diversity on alpha stability
 alpha_5yr.lm.fit <- lm(alpha_sta ~ alpha_div, data = NEON_stab_5yr.data)
 summary(alpha_5yr.lm.fit)
@@ -344,7 +344,7 @@ alpha_5yr.plot <- ggplot(NEON_stab_5yr.data, aes(y = alpha_sta, x = alpha_div)) 
   theme_bw() +
   my_theme
 
-# 2.1.2 the diversity-stability relationships at gamma scale (Extended Data Fig. 3B and Supplementary Table 1)
+# 2.1.2 the diversity-stability relationships at gamma scale (Extended Data Fig. 5B and Supplementary Table 1)
 # fit the model examining the effects of gamma diversity on gamma stability
 gamma_5yr.lm.fit <- lm(gamma_sta ~ gamma_div, data = NEON_stab_5yr.data)
 summary(gamma_5yr.lm.fit)
@@ -365,7 +365,7 @@ gamma_5yr.plot <- ggplot(NEON_stab_5yr.data, aes(y = gamma_sta, x = gamma_div)) 
   theme_bw() +
   my_theme
 
-# 2.1.3 the diversity-stability relationships at tau scale (Extended Data Fig. 3C and Supplementary Table 1)
+# 2.1.3 the diversity-stability relationships at tau scale (Extended Data Fig. 5C and Supplementary Table 1)
 # fit the model examining the effects of tau diversity on tau stability
 tau_5yr.lm.fit <- lm(tau_sta ~ tau_div, data = NEON_stab_5yr.data)
 summary(tau_5yr.lm.fit)
@@ -386,7 +386,7 @@ tau_5yr.plot <- ggplot(NEON_stab_5yr.data, aes(y = tau_sta, x = tau_div)) +
   theme_bw() +
   my_theme
 
-# 2.1.4 the diversity-stability relationships at beta1 scale (Extended Data Fig. 3D and Supplementary Table 1)
+# 2.1.4 the diversity-stability relationships at beta1 scale (Extended Data Fig. 5D and Supplementary Table 1)
 # fit the model examining the effects of beta diversity 1 on spatial asynchrony 1 (beta stability 1)
 beta1_5yr.lm.fit <- lm(spa_asyn1 ~ beta_div1, data = NEON_stab_5yr.data)
 summary(beta1_5yr.lm.fit)
@@ -407,7 +407,7 @@ beta1_5yr.plot <- ggplot(NEON_stab_5yr.data, aes(y = spa_asyn1, x = beta_div1)) 
   theme_bw() +
   my_theme
 
-# 2.1.5 the diversity-stability relationships at beta2 scale (Extended Data Fig. 3E and Supplementary Table 1)
+# 2.1.5 the diversity-stability relationships at beta2 scale (Extended Data Fig. 5E and Supplementary Table 1)
 # fit the model examining the effects of beta diversity 2 on spatial asynchrony 2 (beta stability 2)
 beta2_5yr.lm.fit <- lm(spa_asyn2 ~ beta_div2, data = NEON_stab_5yr.data)
 summary(beta2_5yr.lm.fit)
@@ -432,7 +432,7 @@ beta2_5yr.plot <- ggplot(NEON_stab_5yr.data, aes(y = spa_asyn2, x = beta_div2)) 
 ## 2.2 the results based on the linear partial regression
 # extract the residuals from linear model first
 # we used MAP and MAT because both MAP and MAT has been generally recognized 
-# as the predominant environmental factors along the geographic gradients.
+# as the predominant environmental factors along the climate gradients.
 dd <- NEON_stab_5yr.data
 
 values_5yr_plm.result <- c()
@@ -571,7 +571,7 @@ beta2_5yr_p.plot <- ggplot(NEON_stab_5yr_p.data, aes(y = spa_asyn2_p, x = beta_d
 NEON_stab_6yr.data <- subset(NEON_stab.data, NEON_stab.data$duration > 5)
 ## 3.1 the results based on the simple linear regression
 
-# 3.1.1 the diversity-stability relationships at alpha scale (Extended Data Fig. 4A and Supplementary Table 1)
+# 3.1.1 the diversity-stability relationships at alpha scale (Extended Data Fig. 6A and Supplementary Table 1)
 # fit the model examining the effects of alpha diversity on alpha stability
 alpha_6yr.lm.fit <- lm(alpha_sta ~ alpha_div, data = NEON_stab_6yr.data)
 summary(alpha_6yr.lm.fit)
@@ -592,7 +592,7 @@ alpha_6yr.plot <- ggplot(NEON_stab_6yr.data, aes(y = alpha_sta, x = alpha_div)) 
   theme_bw() +
   my_theme
 
-# 3.1.2 the diversity-stability relationships at gamma scale (Extended Data Fig. 4B and Supplementary Table 1)
+# 3.1.2 the diversity-stability relationships at gamma scale (Extended Data Fig. 6B and Supplementary Table 1)
 # fit the model examining the effects of gamma diversity on gamma stability
 gamma_6yr.lm.fit <- lm(gamma_sta ~ gamma_div, data = NEON_stab_6yr.data)
 summary(gamma_6yr.lm.fit)
@@ -613,7 +613,7 @@ gamma_6yr.plot <- ggplot(NEON_stab_6yr.data, aes(y = gamma_sta, x = gamma_div)) 
   theme_bw() +
   my_theme
 
-# 3.1.3 the diversity-stability relationships at tau scale (Extended Data Fig. 4C and Supplementary Table 1)
+# 3.1.3 the diversity-stability relationships at tau scale (Extended Data Fig. 6C and Supplementary Table 1)
 # fit the model examining the effects of tau diversity on tau stability
 tau_6yr.lm.fit <- lm(tau_sta ~ tau_div, data = NEON_stab_6yr.data)
 summary(tau_6yr.lm.fit)
@@ -634,7 +634,7 @@ tau_6yr.plot <- ggplot(NEON_stab_6yr.data, aes(y = tau_sta, x = tau_div)) +
   theme_bw() +
   my_theme
 
-# 3.1.4 the diversity-stability relationships at beta1 scale (Extended Data Fig. 4D and Supplementary Table 1)
+# 3.1.4 the diversity-stability relationships at beta1 scale (Extended Data Fig. 6D and Supplementary Table 1)
 # fit the model examining the effects of beta diversity 1 on spatial asynchrony 1 (beta stability 1)
 beta1_6yr.lm.fit <- lm(spa_asyn1 ~ beta_div1, data = NEON_stab_6yr.data)
 summary(beta1_6yr.lm.fit)
@@ -655,7 +655,7 @@ beta1_6yr.plot <- ggplot(NEON_stab_6yr.data, aes(y = spa_asyn1, x = beta_div1)) 
   theme_bw() +
   my_theme
 
-# 3.1.5 the diversity-stability relationships at beta2 scale (Extended Data Fig. 4E and Supplementary Table 1)
+# 3.1.5 the diversity-stability relationships at beta2 scale (Extended Data Fig. 6E and Supplementary Table 1)
 # fit the model examining the effects of beta diversity 2 on spatial asynchrony 2 (beta stability 2)
 beta2_6yr.lm.fit <- lm(spa_asyn2 ~ beta_div2, data = NEON_stab_6yr.data)
 summary(beta2_6yr.lm.fit)
@@ -680,7 +680,7 @@ beta2_6yr.plot <- ggplot(NEON_stab_6yr.data, aes(y = spa_asyn2, x = beta_div2)) 
 ## 3.2 the results based on the linear partial regression
 # extract the residuals from linear model first
 # we used MAP and MAT because both MAP and MAT has been generally recognized 
-# as the predominant environmental factors along the geographic gradients.
+# as the predominant environmental factors along the climate gradients.
 dd <- NEON_stab_6yr.data
 
 values_6yr_plm.result <- c()

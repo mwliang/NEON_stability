@@ -80,7 +80,7 @@ ggscatter(ANCOVA_4yr.data, x = "div_p", y = "sta_p", color = "scale", add = "reg
 
 ANCOVA_4yr.data$scale1 <- factor(ANCOVA_4yr.data$scale1,levels=c("a","b"))
 
-# Supplementary Fig 2F left panel
+# Extended Data Fig. 3F left panel
 # 1.2.1 comparing the effects of scale on the diversity-stability relationships at alpha, gamma, and tau scales
 # select the data only for the alpha, gamma, and tau scales
 ANCOVA_rich_p_4yr.data <- ANCOVA_4yr.data[!ANCOVA_4yr.data$scale1%in%c("b"),]
@@ -95,7 +95,7 @@ hist(com_rich_p_4yr.aov$residuals)
 par(mfrow=c(2,2))
 plot(com_rich_p_4yr.aov, which=1:4)
 
-# Supplementary Fig 2F right panel
+# Extended Data Fig. 3F right panel
 # 1.2.2 comparing the effects of scale on the beta_div-spatial_asy relationships at beta1 and beta2 scales
 # select the data only for the beta1 and beta2 scales
 ANCOVA_beta_p_4yr.data <- ANCOVA_4yr.data[!ANCOVA_4yr.data$scale1%in%c("a"),]
@@ -129,7 +129,7 @@ ggscatter(ANCOVA_5yr.data, x = "div", y = "sta", color = "scale", add = "reg.lin
 
 ANCOVA_5yr.data$scale1 <- factor(ANCOVA_5yr.data$scale1,levels=c("a","b"))
 
-# Extended Data Figs. 7F left panel
+# Extended Data Fig. 5F left panel
 # 2.1.1 comparing the effects of scale on the diversity-stability relationships at alpha, gamma, and tau scales
 # select the data only for the alpha, gamma, and tau scales
 ANCOVA_rich_5yr.data <- ANCOVA_5yr.data[!ANCOVA_5yr.data$scale1%in%c("b"),]
@@ -144,7 +144,7 @@ hist(com_rich_5yr.aov$residuals)
 par(mfrow=c(2,2))
 plot(com_rich_5yr.aov, which=1:4)
 
-# Extended Data Figs. 7F right panel
+# Extended Data Fig. 5F right panel
 # 2.1.2 comparing the effects of scale on the beta_div-spatial_asy relationships at beta1 and beta2 scales
 # select the data only for the beta1 and beta2 scales
 ANCOVA_beta_5yr.data <- ANCOVA_5yr.data[!ANCOVA_5yr.data$scale1%in%c("a"),]
@@ -178,7 +178,7 @@ ggscatter(ANCOVA_6yr.data, x = "div", y = "sta", color = "scale", add = "reg.lin
 
 ANCOVA_6yr.data$scale1 <- factor(ANCOVA_6yr.data$scale1,levels=c("a","b"))
 
-# Extended Data Figs. 8F left panel
+# Extended Data Fig. 6F left panel
 # 3.1.1 comparing the effects of scale on the diversity-stability relationships at alpha, gamma, and tau scales
 # select the data only for the alpha, gamma, and tau scales
 ANCOVA_rich_6yr.data <- ANCOVA_6yr.data[!ANCOVA_6yr.data$scale1%in%c("b"),]
@@ -193,7 +193,7 @@ hist(com_rich_6yr.aov$residuals)
 par(mfrow=c(2,2))
 plot(com_rich_6yr.aov, which=1:4)
 
-# Extended Data Figs. 8F right panel
+# Extended Data Fig. 6F right panel
 # 3.1.2 comparing the effects of scale on the beta_div-spatial_asy relationships at beta1 and beta2 scales
 # select the data only for the beta1 and beta2 scales
 ANCOVA_beta_6yr.data <- ANCOVA_6yr.data[!ANCOVA_6yr.data$scale1%in%c("a"),]
