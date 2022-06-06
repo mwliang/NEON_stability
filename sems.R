@@ -165,7 +165,8 @@ dSep(SEM_env3.m) # Note that SEM_env3.m did not have any missing significant pat
 # 2. the sub_SEM in our study (N = 945 at plot level)
 # This sub-dataset was hierarchical at plot level within 36 NEON sites, 
 # within different vegetation types (e.g., the National Land Cover Database Vegetation Type Name, nlcdClass).
-# Thus, we have chosen the mixed-effects models, with "siteID/nlcdClass" as a random factor.
+# Thus, we have chosen the mixed-effects models, with "siteID/nlcdClass" as a random factor, 
+# including "correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass)" as a spatial correlation structure.
  
 # Load packages
 library(nlme)
@@ -185,8 +186,8 @@ variable.names(NEON_stab_plots.data)
 # the first full sub_SEM, excluding all exogenous variables
 sub_SEM.m <- psem(
   
-  lme(alpha_sta ~ alpha_div, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots.data), # a empirical relationship
-  lme(spa_asy1 ~ beta_div1, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots.data), # a empirical relationship
+  lme(alpha_sta ~ alpha_div, random = ~1|siteID/nlcdClass, correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots.data), # a empirical relationship
+  lme(spa_asy1 ~ beta_div1, random = ~1|siteID/nlcdClass, correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots.data), # a empirical relationship
   
   lm(gamma_sta ~ alpha_sta + spa_asy1, data = NEON_stab_plots.data), # mathematical relationships, r2 = 1.00
   
@@ -205,8 +206,8 @@ dSep(sub_SEM.m) # Note that sub_SEM.m had a missing significant pathway.
 # Based on the model fit information, we added the significant pathway
 sub_SEM_1.m <- psem(
   
-  lme(alpha_sta ~ alpha_div + beta_div1, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots.data), # a empirical relationship
-  lme(spa_asy1 ~ beta_div1, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots.data), # a empirical relationship
+  lme(alpha_sta ~ alpha_div + beta_div1, random = ~1|siteID/nlcdClass, correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots.data), # a empirical relationship
+  lme(spa_asy1 ~ beta_div1, random = ~1|siteID/nlcdClass, correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots.data), # a empirical relationship
   
   lm(gamma_sta ~ alpha_sta + spa_asy1, data = NEON_stab_plots.data), # mathematical relationships, r2 = 1.00
   
@@ -225,11 +226,11 @@ dSep(sub_SEM_1.m) # Note that sub_SEM.m did not have any missing significant pat
 # Following up the above process and results, we introduced MAP and MAT into sub_SEM_1.m.
 sub_SEM_2.m <- psem(
   
-  lme(alpha_div ~ MAP_mm + MAT_C, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots.data), # empirical relationships
-  lme(beta_div1 ~ MAP_mm + MAT_C, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots.data), # empirical relationships
+  lme(alpha_div ~ MAP_mm + MAT_C, random = ~1|siteID/nlcdClass, correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots.data), # empirical relationships
+  lme(beta_div1 ~ MAP_mm + MAT_C, random = ~1|siteID/nlcdClass, correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots.data), # empirical relationships
   
-  lme(alpha_sta ~ alpha_div + beta_div1, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots.data), # a empirical relationship
-  lme(spa_asy1 ~ beta_div1, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots.data), # a empirical relationship
+  lme(alpha_sta ~ alpha_div + beta_div1, random = ~1|siteID/nlcdClass, correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots.data), # a empirical relationship
+  lme(spa_asy1 ~ beta_div1, random = ~1|siteID/nlcdClass, correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots.data), # a empirical relationship
   
   lm(gamma_sta ~ alpha_sta + spa_asy1, data = NEON_stab_plots.data), # mathematical relationships, r2 = 1.00
   
@@ -246,14 +247,14 @@ dSep(sub_SEM_2.m) # Note that sub_SEM_2.m had a missing significant pathway.
 
 
 
-# And then, we remove the non-significant pathway and added the significant pathway based one the model fit information.
+# And then, we removed the non-significant pathway and added the significant pathway based one the model fit information.
 sub_SEM_3.m <- psem(
   
-  #lme(alpha_div ~ MAP_mm + MAT_C, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots.data), # empirical relationships
-  lme(beta_div1 ~ MAP_mm + MAT_C, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots.data), # empirical relationships
+  #lme(alpha_div ~ MAP_mm + MAT_C, random = ~1|siteID/nlcdClass, correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots.data), # empirical relationships
+  lme(beta_div1 ~ MAP_mm + MAT_C, random = ~1|siteID/nlcdClass, correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots.data), # empirical relationships
   
-  lme(alpha_sta ~ alpha_div + beta_div1 + MAT_C, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots.data), # a empirical relationship
-  lme(spa_asy1 ~ beta_div1, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots.data), # a empirical relationship
+  lme(alpha_sta ~ alpha_div + beta_div1 + MAT_C, random = ~1|siteID/nlcdClass, correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots.data), # a empirical relationship
+  lme(spa_asy1 ~ beta_div1, random = ~1|siteID/nlcdClass, correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots.data), # a empirical relationship
   
   lm(gamma_sta ~ alpha_sta + spa_asy1, data = NEON_stab_plots.data), # mathematical relationships, r2 = 1.00
   

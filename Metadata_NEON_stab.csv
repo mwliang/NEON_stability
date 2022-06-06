@@ -7,7 +7,7 @@ state,US state abbreviations
 latitude,latitude
 longitude,longitude
 elevation_m,elevation_m
-MAT_C,mean annual temperature (°„C)
+MAT_C,mean annual temperature (oC)
 MAP_mm,mean annual precipitation (mm)
 Temp_s,temperature seasonality (sd*100)
 Prec_s,precipitation seasonality (cv)

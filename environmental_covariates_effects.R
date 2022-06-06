@@ -30,7 +30,7 @@ my_scale <- function(x){
 NEON_stab_4yr.data <- NEON_stab.data
 data_4yr <- NEON_stab_4yr.data
 
-# 1.1 mean annual precipitation (MAP) (Figs. 4D-4F, Extended Data Fig. 7, Supplementary Tables 8-11)
+# 1.1 mean annual precipitation (MAP) (Figs. 4D-4F, Extended Data Fig. 7, Supplementary Table 8)
 # the significant (P < 0.05) effects on diversity
 summary(lm(beta_div1 ~ my_scale(MAP_mm), data = NEON_stab_4yr.data))
 summary(lm(tau_div ~ my_scale(MAP_mm), data = NEON_stab_4yr.data))
@@ -51,7 +51,7 @@ for (i in 19:33){
 colnames(all_MAP_4yr.result) <- c("variable", "estimate", "se", "t value", "p", "r2m", "r2c")
 #write.csv(all_MAP_4yr.result, file = "all_MAP_effects_4yr.csv")
 
-# 1.2 mean annual temperature (MAT) (Figs. 4D-4F, Extended Data Fig. 7, Supplementary Tables 8-11)
+# 1.2 mean annual temperature (MAT) (Figs. 4D-4F, Extended Data Fig. 7, Supplementary Table 9)
 # the significant (P < 0.05) effects on diversity
 summary(lm(beta_div1 ~ my_scale(MAT_C)*my_scale(MAP_mm), data = NEON_stab_4yr.data))
 # the significant (P < 0.05) effects on stability
@@ -70,7 +70,7 @@ for (i in 19:33){
 colnames(all_MAT_4yr.result) <- c("variable", "estimate", "se", "t value", "p", "r2m", "r2c")
 #write.csv(all_MAT_4yr.result, file = "all_MAT_effects_4yr.csv")
 
-# 1.3 precipitation seasonality (Prec_s) (Figs. 4D-4F, Extended Data Fig. 7, Supplementary Tables 8-11)
+# 1.3 precipitation seasonality (Prec_s) (Figs. 4D-4F, Extended Data Fig. 7, Supplementary Table 10)
 # the significant (P < 0.05) effects on diversity
 summary(lm(beta_div1 ~ my_scale(Prec_s), data = NEON_stab_4yr.data))
 summary(lm(beta_div2 ~ my_scale(Prec_s), data = NEON_stab_4yr.data))
@@ -80,6 +80,7 @@ summary(lm(spa_asyn2 ~ my_scale(Prec_s), data = NEON_stab_4yr.data))
 summary(lm(tau_sta ~ my_scale(Prec_s), data = NEON_stab_4yr.data))
 # the significant (P < 0.05) effects on the slopes of diversity-stability relationships
 summary(lm(slope_alpha_sta.alpha_div ~ my_scale(Prec_s), data = NEON_stab_4yr.data))
+summary(lm(slope_gamma_sta.gamma_div ~ my_scale(Prec_s), data = NEON_stab_4yr.data))
 
 all_Prec_s_4yr.result <- c()
 for (i in 19:33){
@@ -93,7 +94,7 @@ for (i in 19:33){
 colnames(all_Prec_s_4yr.result) <- c("variable", "estimate", "se", "t value", "p", "r2m", "r2c")
 #write.csv(all_Prec_s_4yr.result, file = "all_Prec_s_effects_4yr.csv")
 
-# 1.4 temperature seasonality (Temp_s) (Figs. 4D-4F, Extended Data Fig. 7, Supplementary Tables 8-11)
+# 1.4 temperature seasonality (Temp_s) (Figs. 4D-4F, Extended Data Fig. 7, Supplementary Table 11)
 # the significant (P < 0.05) effects on diversity
 summary(lm(beta_div1 ~ my_scale(Temp_s), data = NEON_stab_4yr.data))
 # the significant (P < 0.05) effects on stability
@@ -108,7 +109,7 @@ for (i in 19:33){
   d <- c(colnames(data_4yr)[i], each.result, r2)
   all_Temp_s_4yr.result <- rbind(all_Temp_s_4yr.result, d)
 }
-colnames(all_Temp_s.result) <- c("variable", "estimate", "se", "t value", "p", "r2m", "r2c")
+colnames(all_Temp_s_4yr.result) <- c("variable", "estimate", "se", "t value", "p", "r2m", "r2c")
 #write.csv(all_Temp_s_4yr.result, file = "all_Temp_s_effects_4yr.csv")
 
 # 1.5 the number of plots (no.plot) (Supplementary Table 12)
@@ -190,7 +191,7 @@ summary(all_effects.data$context)
 summary(all_effects.data$factors)
 summary(all_effects.data$variable)
 
-# plot the effects on diversity (Extended Data Fig. 5)
+# plot the effects on diversity (Extended Data Fig. 7)
 all_div.data <- all_effects.data[grep("Biodiversity", all_effects.data$context),]
 all_div.data$variable <- factor(all_div.data$variable, 
                                 levels=c("tau_div","beta_div2","gamma_div","beta_div1", "alpha_div"))
@@ -208,7 +209,7 @@ effects_div.plot <- ggplot(all_div.data , aes(x = variable, y = estimate)) +
   theme_bw() +
   my_theme
 
-# plot the effects on stability (Extended Data Fig. 5)
+# plot the effects on stability (Extended Data Fig. 7)
 all_sta.data <- all_effects.data[grep("Stability", all_effects.data$context),]
 all_sta.data$variable <- factor(all_sta.data$variable, 
                                 levels=c("tau_sta","spa_asyn2","gamma_sta","spa_asyn1", "alpha_sta"))
@@ -229,16 +230,15 @@ effects_sta.plot <- ggplot(all_sta.data , aes(x = variable, y = estimate)) +
 # plot the effects on the diversity-stability relationship slopes at alpha, beta1, and gamma scale (Figs. 4D-4F)
 all_DSRs.data <- all_effects.data[grep("DSRs", all_effects.data$context),]
 all_DSRs.data$variable <- factor(all_DSRs.data$variable, 
-                                levels=c("slope_gamma","slope_beta1", "slope_alpha"))
+                                levels=c("slope_alpha","slope_beta1","slope_gamma"))
 all_DSRs.data$factors <- factor(all_DSRs.data$factors, 
                                levels=c("MAP","Precipitation seasonality","MAT","Temperature seasonality"))
 
-effects_DSRs.plot <- ggplot(all_DSRs.data , aes(x = variable, y = estimate)) +
+effects_DSRs.plot <- ggplot(all_DSRs.data , aes(x = factors, y = estimate)) +
   geom_hline(yintercept=0, linetype="dashed", size=0.5, colour = "gray") +
   geom_errorbar(aes(ymin = estimate - ci, ymax = estimate + ci), size = 0.5, width= 0,alpha=1) +
   geom_point(fill="white", shape=21, size = 3.5) +
-  facet_grid(.~factors) +
-  coord_flip(ylim = c(-0.35,0.35)) +
+  facet_grid(.~variable) +
   ylab(bquote(atop(paste("Effect sizes"), (NULL[paste("regression coefficients")])))) +
   xlab("Climatic factors") +
   theme_bw() +
@@ -294,7 +294,6 @@ colnames(all_MAT_5yr.result) <- c("variable", "estimate", "se", "t value", "p", 
 # the significant (P < 0.05) effects on stability
 summary(lm(spa_asyn2 ~ my_scale(Prec_s), data = NEON_stab_5yr.data))
 # the significant (P < 0.05) effects on the slopes of diversity-stability relationships
-summary(lm(slope_alpha_sta.alpha_div ~ my_scale(Prec_s), data = NEON_stab_5yr.data))
 summary(lm(slope_gamma_sta.gamma_div ~ my_scale(Prec_s), data = NEON_stab_5yr.data))
 
 all_Prec_s_5yr.result <- c()
@@ -338,7 +337,7 @@ summary(lm(spe_sta ~ my_scale(no.plot), data = NEON_stab_5yr.data))
 summary(lm(slope_alpha_sta.alpha_div ~ my_scale(no.plot), data = NEON_stab_5yr.data))
 
 all_N_5yr.result <- c()
-for (i in 19:33){
+for (i in 19:30){
   each.depend <- data_5yr[ , i]
   each.x <- data_5yr[ , 17] #no.plot
   each.fit <- lm(each.depend ~ my_scale(each.x))
@@ -352,7 +351,7 @@ colnames(all_N_5yr.result) <- c("variable", "estimate", "se", "t value", "p", "r
 # 2.6 the average spatial distance of pairwise plots (spa_dist) 
 
 all_spa_dis_5yr.result <- c()
-for (i in 19:33){
+for (i in 19:30){
   each.depend <- data_5yr[ , i]
   each.x <- data_5yr[ , 18] #spa_dist
   each.fit <- lm(each.depend ~ my_scale(each.x))
@@ -366,7 +365,7 @@ colnames(all_spa_dis_5yr.result) <- c("variable", "estimate", "se", "t value", "
 # 2.7 the duration of data collection (duration) 
 
 all_duration_5yr.result <- c()
-for (i in 19:33){
+for (i in 19:30){
   each.depend <- data_5yr[ , i]
   each.x <- data_5yr[ , 16] #duration
   each.fit <- lm(each.depend ~ my_scale(each.x))
@@ -456,7 +455,7 @@ summary(lm(beta_div2 ~ my_scale(no.plot), data = NEON_stab_6yr.data))
 summary(lm(spe_sta ~ my_scale(no.plot), data = NEON_stab_6yr.data))
 
 all_N_6yr.result <- c()
-for (i in 19:33){
+for (i in 19:30){
   each.depend <- data_6yr[ , i]
   each.x <- data_6yr[ , 17] #no.plot
   each.fit <- lm(each.depend ~ my_scale(each.x))
@@ -470,7 +469,7 @@ colnames(all_N_6yr.result) <- c("variable", "estimate", "se", "t value", "p", "r
 # 3.6 the average spatial distance of pairwise plots (spa_dist) 
 
 all_spa_dis_6yr.result <- c()
-for (i in 19:33){
+for (i in 19:30){
   each.depend <- data_6yr[ , i]
   each.x <- data_6yr[ , 18] #spa_dist
   each.fit <- lm(each.depend ~ my_scale(each.x))
@@ -486,7 +485,7 @@ colnames(all_spa_dis_6yr.result) <- c("variable", "estimate", "se", "t value", "
 summary(lm(beta_div2 ~ my_scale(duration), data = NEON_stab_6yr.data))
 
 all_duration_6yr.result <- c()
-for (i in 19:33){
+for (i in 19:30){
   each.depend <- data_6yr[ , i]
   each.x <- data_6yr[ , 16] #duration
   each.fit <- lm(each.depend ~ my_scale(each.x))

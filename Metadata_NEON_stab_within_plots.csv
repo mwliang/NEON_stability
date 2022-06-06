@@ -4,7 +4,7 @@ domain_name,domain name
 siteID,the id of sites
 site_name,site name
 state,US state abbreviations
-MAT_C,mean annual temperature (°„C)
+MAT_C,mean annual temperature (oC)
 MAP_mm,mean annual precipitation (mm)
 Temp_s,temperature seasonality (sd*100)
 Prec_s,precipitation seasonality (cv)

@@ -10,10 +10,11 @@ variable.names(NEON_stab.data)
 [5] "site_name"                 "state"                     "latitude"                  "longitude"                
 [9] "elevation_m"               "MAT_C"                     "MAP_mm"                    "Temp_s"                   
 [13] "Prec_s"                    "started_year"              "end_year"                  "duration"                 
-[17] "no.plot"                   "alpha_div"                 "beta_div1"                 "gamma_div"                
-[21] "beta_div2"                 "tau_div"                   "spe_sta"                   "spe_asyn"                 
-[25] "alpha_sta"                 "spa_asyn1"                 "gamma_sta"                 "spa_asyn2"                
-[29] "tau_sta"                   "slope_alpha_sta.alpha_div" "slope_beta_beta"           "slope_gamma_gamma" 
+[17] "no.plot"                   "spa_dist"                  "alpha_div"                 "beta_div1"                
+[21] "gamma_div"                 "beta_div2"                 "tau_div"                   "spe_sta"                  
+[25] "spe_asyn"                  "alpha_sta"                 "spa_asyn1"                 "gamma_sta"                
+[29] "spa_asyn2"                 "tau_sta"                   "slope_alpha_sta.alpha_div" "slope_spa_asyn1.beta_div1"
+[33] "slope_gamma_sta.gamma_div" "se_alpha"                  "se_beta1"                  "se_gamma"  
 ##############################################################################################################
 ##############################################################################################################
 
@@ -193,7 +194,7 @@ for (i in 19:30){
   each.x2 <- dd[ , 11] # MAP_mm
   each.fit <- lm(each.depend ~ my_scale(each.x1) + my_scale(each.x2))
   resdat.result <- each.fit$residuals
-  values_plm.result <- cbind(values_4yr_plm.result, resdat.result)
+  values_4yr_plm.result <- cbind(values_4yr_plm.result, resdat.result)
 }
 colnames(values_4yr_plm.result) <- c("alpha_div_p",
                                      "beta_div1_p",                     
@@ -442,7 +443,7 @@ for (i in 19:30){
   each.x2 <- dd[ , 11] # MAP_mm
   each.fit <- lm(each.depend ~ my_scale(each.x1) + my_scale(each.x2))
   resdat.result <- each.fit$residuals
-  values_plm.result <- cbind(values_5yr_plm.result, resdat.result)
+  values_5yr_plm.result <- cbind(values_5yr_plm.result, resdat.result)
 }
 colnames(values_5yr_plm.result) <- c("alpha_div_p",
                                      "beta_div1_p",                     
@@ -690,7 +691,7 @@ for (i in 19:30){
   each.x2 <- dd[ , 11] # MAP_mm
   each.fit <- lm(each.depend ~ my_scale(each.x1) + my_scale(each.x2))
   resdat.result <- each.fit$residuals
-  values_plm.result <- cbind(values_6yr_plm.result, resdat.result)
+  values_6yr_plm.result <- cbind(values_6yr_plm.result, resdat.result)
 }
 colnames(values_6yr_plm.result) <- c("alpha_div_p",
                                      "beta_div1_p",                     

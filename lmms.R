@@ -43,7 +43,8 @@ NEON_stab_plots_4yr.data <- NEON_stab_plots.data
 
 # 1.1 the diversity-stability relationships at alpha scale 
 # fit the model examining the effects of alpha diversity on alpha stability (Fig. 4A and Supplementary Table 3)
-alpha_alpha_sta_4yr_lmm.fit <- lme(alpha_sta ~ alpha_div, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots_4yr.data)
+alpha_alpha_sta_4yr_lmm.fit <- lme(alpha_sta ~ alpha_div, random = ~1|siteID/nlcdClass, 
+                                   correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots_4yr.data)
 summary(alpha_alpha_sta_4yr_lmm.fit)
 anova(alpha_alpha_sta_4yr_lmm.fit)
 r.squaredGLMM(alpha_alpha_sta_4yr_lmm.fit)
@@ -84,7 +85,8 @@ alpha_alpha_sta_4yr.plot <- ggplot(NEON_stab_plots_4yr.data, aes(y = alpha_sta, 
 
 # 1.2 the diversity-stability relationships at beta1 scale 
 # fit the model examining the effects of beta diversity 1 on spatial asynchrony 1 (beta stability 1) (Fig. 4B and Supplementary Table 3)
-beta1_spa_asy1_4yr_lmm.fit <- lme(spa_asy1 ~ beta_div1, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots_4yr.data)
+beta1_spa_asy1_4yr_lmm.fit <- lme(spa_asy1 ~ beta_div1, random = ~1|siteID/nlcdClass, 
+                                  correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots_4yr.data)
 summary(beta1_spa_asy1_4yr_lmm.fit)
 anova(beta1_spa_asy1_4yr_lmm.fit)
 r.squaredGLMM(beta1_spa_asy1_4yr_lmm.fit)
@@ -127,7 +129,8 @@ beta1_spa_asy1_4yr.plot <- ggplot(NEON_stab_plots_4yr.data, aes(y = spa_asy1, x 
 
 # 1.3 the diversity-stability relationships at gamma scale 
 # fit the model examining the effects of gamma diversity on gamma stability (Fig. 4C and Supplementary Table 3)
-gamma_gamma_sta_4yr_lmm.fit <- lme(gamma_sta ~ gamma_div, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots_4yr.data)
+gamma_gamma_sta_4yr_lmm.fit <- lme(gamma_sta ~ gamma_div, random = ~1|siteID/nlcdClass, 
+                                   correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots_4yr.data)
 summary(gamma_gamma_sta_4yr_lmm.fit)
 anova(gamma_gamma_sta_4yr_lmm.fit)
 r.squaredGLMM(gamma_gamma_sta_4yr_lmm.fit)
@@ -169,7 +172,8 @@ gamma_gamma_sta_4yr.plot <- ggplot(NEON_stab_plots_4yr.data, aes(y = gamma_sta, 
 
 # 1.4 the diversity-stability relationships at population-level 
 # fit the model examining the effects of alpha diversity on species stability (Supplementary Fig. 1A and Table 4)
-alpha_spe_sta_4yr_lmm.fit <- lme(spe_sta ~ alpha_div, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots_4yr.data)
+alpha_spe_sta_4yr_lmm.fit <- lme(spe_sta ~ alpha_div, random = ~1|siteID/nlcdClass, 
+                                 correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots_4yr.data)
 summary(alpha_spe_sta_4yr_lmm.fit)
 anova(alpha_spe_sta_4yr_lmm.fit)
 r.squaredGLMM(alpha_spe_sta_4yr_lmm.fit)
@@ -204,13 +208,14 @@ alpha_spe_sta_4yr.plot <- ggplot(NEON_stab_plots_4yr.data, aes(y = spe_sta, x = 
   annotate("text", x = 2.1, y = 1.0, size = 4, family = "Arial", 
            label ="paste(italic(R[m]^2), \" = 0.001\")", parse=TRUE, hjust= 0) +
   annotate("text", x = 2.1, y = 0.75, size = 4, family = "Arial", 
-           label ="paste(italic(R[c]^2), \" = 0.54\")", parse=TRUE, hjust= 0) +
+           label ="paste(italic(R[c]^2), \" = 0.53\")", parse=TRUE, hjust= 0) +
   theme_bw() +
   my_theme
 
 # 1.5 the diversity-stability relationships at population-level 
 # fit the model examining the effects of alpha diversity on species asynchrony (Supplementary Fig. 1B and Table 4)
-alpha_spe_asy_4yr_lmm.fit <- lme(spe_asy ~ alpha_div, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots_4yr.data)
+alpha_spe_asy_4yr_lmm.fit <- lme(spe_asy ~ alpha_div, random = ~1|siteID/nlcdClass, 
+                                 correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots_4yr.data)
 summary(alpha_spe_asy_4yr_lmm.fit)
 anova(alpha_spe_asy_4yr_lmm.fit)
 r.squaredGLMM(alpha_spe_asy_4yr_lmm.fit)
@@ -256,7 +261,8 @@ NEON_stab_plots_5yr.data <- subset(NEON_stab_plots.data, NEON_stab_plots.data$du
 
 # 2.1 the diversity-stability relationships at alpha scale 
 # fit the model examining the effects of alpha diversity on alpha stability  (Supplementary Table 3)
-alpha_alpha_sta_5yr_lmm.fit <- lme(alpha_sta ~ alpha_div, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots_5yr.data)
+alpha_alpha_sta_5yr_lmm.fit <- lme(alpha_sta ~ alpha_div, random = ~1|siteID/nlcdClass, 
+                                   correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots_5yr.data)
 summary(alpha_alpha_sta_5yr_lmm.fit)
 anova(alpha_alpha_sta_5yr_lmm.fit)
 r.squaredGLMM(alpha_alpha_sta_5yr_lmm.fit)
@@ -291,13 +297,14 @@ alpha_alpha_sta_5yr.plot <- ggplot(NEON_stab_plots_5yr.data, aes(y = alpha_sta, 
   annotate("text", x = 2, y = -0.1, size = 4, family = "Arial", 
            label ="paste(italic(R[m]^2), \" = 0.13 ***\")", parse=TRUE, hjust= 0) +
   annotate("text", x = 2, y = -0.45, size = 4, family = "Arial", 
-           label ="paste(italic(R[c]^2), \" = 0.39 ***\")", parse=TRUE, hjust= 0) +
+           label ="paste(italic(R[c]^2), \" = 0.37 ***\")", parse=TRUE, hjust= 0) +
   theme_bw() +
   my_theme
 
 # 2.2 the diversity-stability relationships at beta1 scale 
 # fit the model examining the effects of beta diversity 1 on spatial asynchrony 1  (Supplementary Table 3)
-beta1_spa_asy1_5yr_lmm.fit <- lme(spa_asy1 ~ beta_div1, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots_5yr.data)
+beta1_spa_asy1_5yr_lmm.fit <- lme(spa_asy1 ~ beta_div1, random = ~1|siteID/nlcdClass, 
+                                  correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots_5yr.data)
 summary(beta1_spa_asy1_5yr_lmm.fit)
 anova(beta1_spa_asy1_5yr_lmm.fit)
 r.squaredGLMM(beta1_spa_asy1_5yr_lmm.fit)
@@ -334,13 +341,14 @@ beta1_spa_asy1_5yr.plot <- ggplot(NEON_stab_plots_5yr.data, aes(y = spa_asy1, x 
   annotate("text", x = 0.2, y = 3.0, size = 4, family = "Arial", 
            label ="paste(italic(R[m]^2), \" = 0.01 *\")", parse=TRUE, hjust= 0) +
   annotate("text", x = 0.2, y = 2.5, size = 4, family = "Arial", 
-           label ="paste(italic(R[c]^2), \" = 0.28 *\")", parse=TRUE, hjust= 0) +
+           label ="paste(italic(R[c]^2), \" = 0.27 *\")", parse=TRUE, hjust= 0) +
   theme_bw() +
   my_theme
 
 # 2.3 the diversity-stability relationships at gamma scale 
-# fit the model examining the effects of gamma diversity on gamma stability 
-gamma_gamma_sta_5yr_lmm.fit <- lme(gamma_sta ~ gamma_div, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots_5yr.data)
+# fit the model examining the effects of gamma diversity on gamma stability (Supplementary Table 3)
+gamma_gamma_sta_5yr_lmm.fit <- lme(gamma_sta ~ gamma_div, random = ~1|siteID/nlcdClass, 
+                                   correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots_5yr.data)
 summary(gamma_gamma_sta_5yr_lmm.fit)
 anova(gamma_gamma_sta_5yr_lmm.fit)
 r.squaredGLMM(gamma_gamma_sta_5yr_lmm.fit)
@@ -382,7 +390,8 @@ gamma_gamma_sta_5yr.plot <- ggplot(NEON_stab_plots_5yr.data, aes(y = gamma_sta, 
 
 # 2.4 the diversity-stability relationships at population-level 
 # fit the model examining the effects of alpha diversity on species stability 
-alpha_spe_sta_5yr_lmm.fit <- lme(spe_sta ~ alpha_div, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots_5yr.data)
+alpha_spe_sta_5yr_lmm.fit <- lme(spe_sta ~ alpha_div, random = ~1|siteID/nlcdClass, 
+                                 correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots_5yr.data)
 summary(alpha_spe_sta_5yr_lmm.fit)
 anova(alpha_spe_sta_5yr_lmm.fit)
 r.squaredGLMM(alpha_spe_sta_5yr_lmm.fit)
@@ -423,7 +432,8 @@ alpha_spe_sta_5yr.plot <- ggplot(NEON_stab_plots_5yr.data, aes(y = spe_sta, x = 
 
 # 2.5 the diversity-stability relationships at population-level 
 # fit the model examining the effects of alpha diversity on species asynchrony 
-alpha_spe_asy_5yr_lmm.fit <- lme(spe_asy ~ alpha_div, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots_5yr.data)
+alpha_spe_asy_5yr_lmm.fit <- lme(spe_asy ~ alpha_div, random = ~1|siteID/nlcdClass, 
+                                 correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots_5yr.data)
 summary(alpha_spe_asy_5yr_lmm.fit)
 anova(alpha_spe_asy_5yr_lmm.fit)
 r.squaredGLMM(alpha_spe_asy_5yr_lmm.fit)
@@ -458,7 +468,7 @@ alpha_spe_asy_5yr.plot <- ggplot(NEON_stab_plots_5yr.data, aes(y = spe_asy, x = 
   annotate("text", x = 1.5, y = 2.1, size = 4, family = "Arial", 
            label ="paste(italic(R[m]^2), \" = 0.14 ***\")", parse=TRUE, hjust= 0) +
   annotate("text", x = 1.5, y = 1.8, size = 4, family = "Arial", 
-           label ="paste(italic(R[c]^2), \" = 0.59 ***\")", parse=TRUE, hjust= 0) +
+           label ="paste(italic(R[c]^2), \" = 0.60 ***\")", parse=TRUE, hjust= 0) +
   theme_bw() +
   my_theme
 
@@ -467,8 +477,9 @@ alpha_spe_asy_5yr.plot <- ggplot(NEON_stab_plots_5yr.data, aes(y = spe_asy, x = 
 NEON_stab_plots_6yr.data <- subset(NEON_stab_plots.data, NEON_stab_plots.data$duration > 5)
 
 # 3.1 the diversity-stability relationships at alpha scale 
-# fit the model examining the effects of alpha diversity on alpha stability 
-alpha_alpha_sta_6yr_lmm.fit <- lme(alpha_sta ~ alpha_div, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots_6yr.data)
+# fit the model examining the effects of alpha diversity on alpha stability (Supplementary Table 3)
+alpha_alpha_sta_6yr_lmm.fit <- lme(alpha_sta ~ alpha_div, random = ~1|siteID/nlcdClass, 
+                                   correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots_6yr.data)
 summary(alpha_alpha_sta_6yr_lmm.fit)
 anova(alpha_alpha_sta_6yr_lmm.fit)
 r.squaredGLMM(alpha_alpha_sta_6yr_lmm.fit)
@@ -503,13 +514,14 @@ alpha_alpha_sta_6yr.plot <- ggplot(NEON_stab_plots_6yr.data, aes(y = alpha_sta, 
   annotate("text", x = 2, y = -0.1, size = 4, family = "Arial", 
            label ="paste(italic(R[m]^2), \" = 0.15 ***\")", parse=TRUE, hjust= 0) +
   annotate("text", x = 2, y = -0.45, size = 4, family = "Arial", 
-           label ="paste(italic(R[c]^2), \" = 0.42 ***\")", parse=TRUE, hjust= 0) +
+           label ="paste(italic(R[c]^2), \" = 0.41 ***\")", parse=TRUE, hjust= 0) +
   theme_bw() +
   my_theme
 
 # 3.2 the diversity-stability relationships at beta1 scale 
-# fit the model examining the effects of beta diversity 1 on spatial asynchrony 1 
-beta1_spa_asy1_6yr_lmm.fit <- lme(spa_asy1 ~ beta_div1, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots_6yr.data)
+# fit the model examining the effects of beta diversity 1 on spatial asynchrony 1 (Supplementary Table 3)
+beta1_spa_asy1_6yr_lmm.fit <- lme(spa_asy1 ~ beta_div1, random = ~1|siteID/nlcdClass, 
+                                  correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots_6yr.data)
 summary(beta1_spa_asy1_6yr_lmm.fit)
 anova(beta1_spa_asy1_6yr_lmm.fit)
 r.squaredGLMM(beta1_spa_asy1_6yr_lmm.fit)
@@ -534,9 +546,9 @@ beta1_spa_asy1_6yr.plot <- ggplot(NEON_stab_plots_6yr.data, aes(y = spa_asy1, x 
   geom_point(size = 2.5, alpha = 0.3) +
   geom_smooth(aes(group = siteID), method = "lm", formula = y~x, se=F, size =0.5) +
   #geom_ribbon(data = beta1_spa_asy1_6yr_newdat.lme, 
-              #aes(y = NULL, ymin = lower, ymax = upper, color = NULL), 
-              #alpha = .15) +  # add Confidence interval
-  scale_fill_manual(values=c("gray")) + # fill the color
+  #aes(y = NULL, ymin = lower, ymax = upper, color = NULL), 
+  #alpha = .15) +  # add Confidence interval
+  #scale_fill_manual(values=c("gray")) + # fill the color
   geom_line(data = beta1_spa_asy1_6yr_newdat.lme, aes(y = predlme), size = 1.5, color = "black", linetype ="dashed") +
   ylab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" stability ("*NULL[paste(log[10]*"("*beta[~S]^(alpha*"¡ú"*gamma)*")")]*")"))) +
   xlab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" diversity ("*NULL[paste(log[10]*"("*beta[~D]^(alpha*"¡ú"*gamma)*")")]*")"))) +
@@ -551,8 +563,9 @@ beta1_spa_asy1_6yr.plot <- ggplot(NEON_stab_plots_6yr.data, aes(y = spa_asy1, x 
   my_theme
 
 # 3.3 the diversity-stability relationships at gamma scale 
-# fit the model examining the effects of gamma diversity on gamma stability 
-gamma_gamma_sta_6yr_lmm.fit <- lme(gamma_sta ~ gamma_div, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots_6yr.data)
+# fit the model examining the effects of gamma diversity on gamma stability (Supplementary Table 3)
+gamma_gamma_sta_6yr_lmm.fit <- lme(gamma_sta ~ gamma_div, random = ~1|siteID/nlcdClass, 
+                                   correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots_6yr.data)
 summary(gamma_gamma_sta_6yr_lmm.fit)
 anova(gamma_gamma_sta_6yr_lmm.fit)
 r.squaredGLMM(gamma_gamma_sta_6yr_lmm.fit)
@@ -594,7 +607,8 @@ gamma_gamma_sta_6yr.plot <- ggplot(NEON_stab_plots_6yr.data, aes(y = gamma_sta, 
 
 # 3.4 the diversity-stability relationships at population-level 
 # fit the model examining the effects of alpha diversity on species stability 
-alpha_spe_sta_6yr_lmm.fit <- lme(spe_sta ~ alpha_div, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots_6yr.data)
+alpha_spe_sta_6yr_lmm.fit <- lme(spe_sta ~ alpha_div, random = ~1|siteID/nlcdClass, 
+                                 correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots_6yr.data)
 summary(alpha_spe_sta_6yr_lmm.fit)
 anova(alpha_spe_sta_6yr_lmm.fit)
 r.squaredGLMM(alpha_spe_sta_6yr_lmm.fit)
@@ -627,15 +641,16 @@ alpha_spe_sta_6yr.plot <- ggplot(NEON_stab_plots_6yr.data, aes(y = spe_sta, x = 
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "D") +
   annotate("text", x = 2.1, y = 1.0, size = 4, family = "Arial", 
-           label ="paste(italic(R[m]^2), \" = 0.009\")", parse=TRUE, hjust= 0) +
+           label ="paste(italic(R[m]^2), \" = 0.008\")", parse=TRUE, hjust= 0) +
   annotate("text", x = 2.1, y = 0.75, size = 4, family = "Arial", 
-           label ="paste(italic(R[c]^2), \" = 0.45\")", parse=TRUE, hjust= 0) +
+           label ="paste(italic(R[c]^2), \" = 0.38\")", parse=TRUE, hjust= 0) +
   theme_bw() +
   my_theme
 
 # 3.5 the diversity-stability relationships at population-level 
 # fit the model examining the effects of alpha diversity on species asynchrony 
-alpha_spe_asy_6yr_lmm.fit <- lme(spe_asy ~ alpha_div, random = ~1|siteID/nlcdClass, correlation = corAR1(), data = NEON_stab_plots_6yr.data)
+alpha_spe_asy_6yr_lmm.fit <- lme(spe_asy ~ alpha_div, random = ~1|siteID/nlcdClass, 
+                                 correlation = corExp(form = ~ latitude + longitude|siteID/nlcdClass), data = NEON_stab_plots_6yr.data)
 summary(alpha_spe_asy_6yr_lmm.fit)
 anova(alpha_spe_asy_6yr_lmm.fit)
 r.squaredGLMM(alpha_spe_asy_6yr_lmm.fit)
@@ -668,8 +683,9 @@ alpha_spe_asy_6yr.plot <- ggplot(NEON_stab_plots_6yr.data, aes(y = spe_asy, x = 
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "E") +
   annotate("text", x = 1.5, y = 2.1, size = 4, family = "Arial", 
-           label ="paste(italic(R[m]^2), \" = 0.08 ***\")", parse=TRUE, hjust= 0) +
+           label ="paste(italic(R[m]^2), \" = 0.07 ***\")", parse=TRUE, hjust= 0) +
   annotate("text", x = 1.5, y = 1.8, size = 4, family = "Arial", 
-           label ="paste(italic(R[c]^2), \" = 0.63 ***\")", parse=TRUE, hjust= 0) +
+           label ="paste(italic(R[c]^2), \" = 0.64 ***\")", parse=TRUE, hjust= 0) +
   theme_bw() +
   my_theme
+
