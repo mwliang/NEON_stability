@@ -9,10 +9,10 @@ ANCOVA.data <- read.csv('ANCOVA_div_sta.csv',header=T)
 # check variables
 variable.names(ANCOVA.data)
 ##############################################################################################################
-[1] "state"        "biome_types"  "latitude"     "longitude"    "elevation_m" 
-[6] "MAT_C"        "MAP_mm"       "Aridity"      "Temp_s"       "Prec_s"      
-[11] "started_year" "end_year"     "duration"     "N"            "scale"       
-[16] "scale1"       "div"          "sta"          "div_p"        "sta_p"
+[1] "domain"       "domain_name"  "siteID"       "site_name"    "state"        "biome_types" 
+[7] "latitude"     "longitude"    "elevation_m"  "MAT_C"        "MAP_mm"       "Temp_s"      
+[13] "Prec_s"       "started_year" "end_year"     "duration"     "N"            "scale"       
+[19] "scale1"       "div"          "sta"          "div_p"        "sta_p"
 ##############################################################################################################
 ############################################
 # 1 for >= 4-year observations (N=36)
