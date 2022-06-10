@@ -1,6 +1,5 @@
 # Load packages
 library(nlme)
-library(lme4)
 library(MuMIn)
 library(ggplot2)
 

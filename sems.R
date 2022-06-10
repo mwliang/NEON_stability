@@ -170,7 +170,6 @@ dSep(SEM_env3.m) # Note that SEM_env3.m did not have any missing significant pat
  
 # Load packages
 library(nlme)
-library(lme4)
 
 # load data
 NEON_stab_plots.data <- read.csv('NEON_stab_within_plots.csv',header=T)
