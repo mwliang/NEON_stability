@@ -21,7 +21,7 @@ for (j in 1:length (site)) {
   data <- plot_dist.data[plot_dist.data$siteID==site[j], ]
   each.x <- data[ , 2] #spa_dist
   each.y <- data[ , 3] #community dissimilarity
-  each.fit <- lm(log10(each.y) ~ log10(each.x))
+  each.fit <- lm(log(each.y) ~ log(each.x))
     each.result <- c(unlist(summary(each.fit)$coefficients[1, 1:2]),
                      unlist(summary(each.fit)$coefficients[2, 1:4]), 
                      r2 <- r.squaredGLMM(each.fit))
@@ -33,12 +33,12 @@ colnames(all_dis.result) <- c("siteID", "intercept", "se_intercept", "estimate",
 ## we have calculated the community dissimilarity between two pairwise plots 
 ## examine the relationships between community dissimilarity and the distance between two pairwise plots 
 ## (Supplementary Fig. 6)
-dist_all.plot <- ggplot(plot_dist.data, aes(y = log10(comdis), x = log10(plot_dist_km))) +
+dist_all.plot <- ggplot(plot_dist.data, aes(y = log(comdis), x = log(plot_dist_km))) +
   geom_point(size = 1, alpha = 0.1, color = "gray30") +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1) +
   facet_wrap(~ siteID, ncol = 6, scales = "free") +
-  ylab(bquote(paste("Community dissimilarity ("*log[10]*"(Bray-Curtis index)"*") "))) +
-  xlab(bquote(paste("Plot distance ("*log[10]*"(km)"*") "))) +
+  ylab(bquote(paste("Community dissimilarity ("*ln*"(Bray-Curtis index)"*") "))) +
+  xlab(bquote(paste("Plot distance ("*ln*"(km)"*") "))) +
   #scale_y_continuous(labels=scaleFUN) +
   theme_bw() +
   theme(legend.position = "none",

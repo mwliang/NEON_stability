@@ -24,8 +24,8 @@ ggscatter(ANCOVA_4yr.data, x = "div", y = "sta", color = "scale", add = "reg.lin
   stat_regline_equation(aes(label =  paste(..eq.label.., ..rr.label.., sep = "~~~~"), color = scale)) +
   scale_color_manual(values=c('#0072B2','#E69F00','#009E73','gray40',"black"),
                      breaks = c("alpha","gamma","tau","beta1","beta2")) +
-  ylab(bquote(paste("Stability metrics ( "*log[10]*")"))) +
-  xlab(bquote(paste("Diversity metrics ( "*log[10]*")"))) +
+  ylab(bquote(paste("Stability metrics ( "*ln-transformed*")"))) +
+  xlab(bquote(paste("Diversity metrics ( "*ln-transformed*")"))) +
   labs(color = "Scale")
 
 # "a" denotes alpha, gamma, and tau scale
@@ -71,8 +71,8 @@ ggscatter(ANCOVA_4yr.data, x = "div_p", y = "sta_p", color = "scale", add = "reg
   stat_regline_equation(aes(label =  paste(..eq.label.., ..rr.label.., sep = "~~~~"), color = scale)) +
   scale_color_manual(values=c('#0072B2','#E69F00','#009E73','gray40',"black"),
                      breaks = c("alpha","gamma","tau","beta1","beta2")) +
-  ylab(bquote(paste("Stability metrics ( "*log[10]*")"))) +
-  xlab(bquote(paste("Diversity metrics ( "*log[10]*")"))) +
+  ylab(bquote(paste("Stability metrics ( "*ln-transformed*")"))) +
+  xlab(bquote(paste("Diversity metrics ( "*ln-transformed*")"))) +
   labs(color = "Scale")
 
 # "a" denotes alpha, gamma, and tau scale
@@ -120,8 +120,8 @@ ggscatter(ANCOVA_5yr.data, x = "div", y = "sta", color = "scale", add = "reg.lin
   stat_regline_equation(aes(label =  paste(..eq.label.., ..rr.label.., sep = "~~~~"), color = scale)) +
   scale_color_manual(values=c('#0072B2','#E69F00','#009E73','gray40',"black"),
                      breaks = c("alpha","gamma","tau","beta1","beta2")) +
-  ylab(bquote(paste("Stability metrics ( "*log[10]*")"))) +
-  xlab(bquote(paste("Diversity metrics ( "*log[10]*")"))) +
+  ylab(bquote(paste("Stability metrics ( "*ln-transformed*")"))) +
+  xlab(bquote(paste("Diversity metrics ( "*ln-transformed*")"))) +
   labs(color = "Scale")
 
 # "a" denotes alpha, gamma, and tau scale
@@ -169,8 +169,8 @@ ggscatter(ANCOVA_6yr.data, x = "div", y = "sta", color = "scale", add = "reg.lin
   stat_regline_equation(aes(label =  paste(..eq.label.., ..rr.label.., sep = "~~~~"), color = scale)) +
   scale_color_manual(values=c('#0072B2','#E69F00','#009E73','gray40',"black"),
                      breaks = c("alpha","gamma","tau","beta1","beta2")) +
-  ylab(bquote(paste("Stability metrics ( "*log[10]*")"))) +
-  xlab(bquote(paste("Diversity metrics ( "*log[10]*")"))) +
+  ylab(bquote(paste("Stability metrics ( "*ln-transformed*")"))) +
+  xlab(bquote(paste("Diversity metrics ( "*ln-transformed*")"))) +
   labs(color = "Scale")
 
 # "a" denotes alpha, gamma, and tau scale
@@ -206,3 +206,4 @@ hist(asy_beta_6yr.aov$residuals)
 par(mfrow=c(2,2))
 plot(asy_beta_6yr.aov, which=1:4)
 dev.off()
+

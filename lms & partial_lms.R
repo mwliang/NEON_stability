@@ -69,8 +69,8 @@ alpha_4yr.plot <- ggplot(NEON_stab_4yr.data, aes(y = alpha_sta, x = alpha_div)) 
   geom_point(shape = 21, size = 3.5, colour = "#0072B2", fill = "#0072B2", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="#0072B2") +
-  ylab(bquote(paste(alpha*" stability ("*NULL[paste(log[10]*"("*alpha[S]*")")]*")"))) +
-  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(log[10]*"("*alpha[D]*")")]*")"))) +
+  ylab(bquote(paste(alpha*" stability ("*NULL[paste(ln*"("*alpha[S]*")")]*")"))) +
+  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(ln*"("*alpha[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "A") +
   theme_bw() +
@@ -95,8 +95,8 @@ gamma_4yr.plot <- ggplot(NEON_stab_4yr.data, aes(y = gamma_sta, x = gamma_div)) 
   geom_point(shape = 21, size = 3.5, colour = "#D55E00", fill = "#D55E00", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="#D55E00") +
-  ylab(bquote(paste(gamma*" stability ("*NULL[paste(log[10]*"("*gamma[S]*")")]*")"))) +
-  xlab(bquote(paste(gamma*" diversity ("*NULL[paste(log[10]*"("*gamma[D]*")")]*")"))) +
+  ylab(bquote(paste(gamma*" stability ("*NULL[paste(ln*"("*gamma[S]*")")]*")"))) +
+  xlab(bquote(paste(gamma*" diversity ("*NULL[paste(ln*"("*gamma[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "B") +
   theme_bw() +
@@ -121,8 +121,8 @@ tau_4yr.plot <- ggplot(NEON_stab_4yr.data, aes(y = tau_sta, x = tau_div)) +
   geom_point(shape = 21, size = 3.5, colour = "#009E73", fill = "#009E73", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="#009E73") +
-  ylab(bquote(paste(tau*" stability ("*NULL[paste(log[10]*"("*tau[S]*")")]*")"))) +
-  xlab(bquote(paste(tau*" diversity ("*NULL[paste(log[10]*"("*tau[D]*")")]*")"))) +
+  ylab(bquote(paste(tau*" stability ("*NULL[paste(ln*"("*tau[S]*")")]*")"))) +
+  xlab(bquote(paste(tau*" diversity ("*NULL[paste(ln*"("*tau[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "C") +
   theme_bw() +
@@ -147,8 +147,8 @@ beta1_4yr.plot <- ggplot(NEON_stab_4yr.data, aes(y = spa_asyn1, x = beta_div1)) 
   geom_point(shape = 21, size = 3.5, colour = "gray30", fill = "gray30", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="gray30") +
-  ylab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" stability ("*NULL[paste(log[10]*"("*beta[~S]^(alpha*"¡ú"*gamma)*")")]*")"))) +
-  xlab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" diversity ("*NULL[paste(log[10]*"("*beta[~D]^(alpha*"¡ú"*gamma)*")")]*")"))) +
+  ylab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" stability ("*NULL[paste(ln*"("*beta[~S]^(alpha*"¡ú"*gamma)*")")]*")"))) +
+  xlab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" diversity ("*NULL[paste(ln*"("*beta[~D]^(alpha*"¡ú"*gamma)*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "D") +
   theme_bw() +
@@ -173,8 +173,8 @@ beta2_4yr.plot <- ggplot(NEON_stab_4yr.data, aes(y = spa_asyn2, x = beta_div2)) 
   geom_point(shape = 21, size = 3.5, colour = "black", fill = "black", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="black") +
-  ylab(bquote(paste(beta^(gamma*"¡ú"*tau)*" stability ("*NULL[paste(log[10]*"("*beta[~S]^(gamma*"¡ú"*tau)*")")] * ")"))) +
-  xlab(bquote(paste(beta^(gamma*"¡ú"*tau)*" diversity ("*NULL[paste(log[10]*"("*beta[~D]^(gamma*"¡ú"*tau)*")")] * ")"))) +
+  ylab(bquote(paste(beta^(gamma*"¡ú"*tau)*" stability ("*NULL[paste(ln*"("*beta[~S]^(gamma*"¡ú"*tau)*")")] * ")"))) +
+  xlab(bquote(paste(beta^(gamma*"¡ú"*tau)*" diversity ("*NULL[paste(ln*"("*beta[~D]^(gamma*"¡ú"*tau)*")")] * ")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "E") +
   theme_bw() +
@@ -226,8 +226,8 @@ alpha_4yr_p.plot <- ggplot(NEON_stab_4yr_p.data, aes(y = alpha_sta_p, x = alpha_
   geom_point(shape = 21, size = 3.5, colour = "#0072B2", fill = "#0072B2", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="#0072B2") +
-  ylab(bquote(paste(alpha*" stability ("*NULL[paste(log[10]*"("*alpha[S]*")")]*")"))) +
-  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(log[10]*"("*alpha[D]*")")]*")"))) +
+  ylab(bquote(paste(alpha*" stability ("*NULL[paste(ln*"("*alpha[S]*")")]*")"))) +
+  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(ln*"("*alpha[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "A") +
   theme_bw() +
@@ -247,8 +247,8 @@ gamma_4yr_p.plot <- ggplot(NEON_stab_4yr_p.data, aes(y = gamma_sta_p, x = gamma_
   geom_point(shape = 21, size = 3.5, colour = "#D55E00", fill = "#D55E00", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="#D55E00") +
-  ylab(bquote(paste(gamma*" stability ("*NULL[paste(log[10]*"("*gamma[S]*")")]*")"))) +
-  xlab(bquote(paste(gamma*" diversity ("*NULL[paste(log[10]*"("*gamma[D]*")")]*")"))) +
+  ylab(bquote(paste(gamma*" stability ("*NULL[paste(ln*"("*gamma[S]*")")]*")"))) +
+  xlab(bquote(paste(gamma*" diversity ("*NULL[paste(ln*"("*gamma[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "B") +
   theme_bw() +
@@ -268,8 +268,8 @@ tau_4yr_p.plot <- ggplot(NEON_stab_4yr_p.data, aes(y = tau_sta_p, x = tau_div_p)
   geom_point(shape = 21, size = 3.5, colour = "#009E73", fill = "#009E73", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="#009E73") +
-  ylab(bquote(paste(tau*" stability ("*NULL[paste(log[10]*"("*tau[S]*")")]*")"))) +
-  xlab(bquote(paste(tau*" diversity ("*NULL[paste(log[10]*"("*tau[D]*")")]*")"))) +
+  ylab(bquote(paste(tau*" stability ("*NULL[paste(ln*"("*tau[S]*")")]*")"))) +
+  xlab(bquote(paste(tau*" diversity ("*NULL[paste(ln*"("*tau[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "C") +
   theme_bw() +
@@ -289,8 +289,8 @@ beta1_4yr_p.plot <- ggplot(NEON_stab_4yr_p.data, aes(y = spa_asyn1_p, x = beta_d
   geom_point(shape = 21, size = 3.5, colour = "gray30", fill = "gray30", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="gray30") +
-  ylab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" stability ("*NULL[paste(log[10]*"("*beta[~S]^(alpha*"¡ú"*gamma)*")")]*")"))) +
-  xlab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" diversity ("*NULL[paste(log[10]*"("*beta[~D]^(alpha*"¡ú"*gamma)*")")]*")"))) +
+  ylab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" stability ("*NULL[paste(ln*"("*beta[~S]^(alpha*"¡ú"*gamma)*")")]*")"))) +
+  xlab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" diversity ("*NULL[paste(ln*"("*beta[~D]^(alpha*"¡ú"*gamma)*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "D") +
   theme_bw() +
@@ -310,8 +310,8 @@ beta2_4yr_p.plot <- ggplot(NEON_stab_4yr_p.data, aes(y = spa_asyn2_p, x = beta_d
   geom_point(shape = 21, size = 3.5, colour = "black", fill = "black", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="black") +
-  ylab(bquote(paste(beta^(gamma*"¡ú"*tau)*" stability ("*NULL[paste(log[10]*"("*beta[~S]^(gamma*"¡ú"*tau)*")")] * ")"))) +
-  xlab(bquote(paste(beta^(gamma*"¡ú"*tau)*" diversity ("*NULL[paste(log[10]*"("*beta[~D]^(gamma*"¡ú"*tau)*")")] * ")"))) +
+  ylab(bquote(paste(beta^(gamma*"¡ú"*tau)*" stability ("*NULL[paste(ln*"("*beta[~S]^(gamma*"¡ú"*tau)*")")] * ")"))) +
+  xlab(bquote(paste(beta^(gamma*"¡ú"*tau)*" diversity ("*NULL[paste(ln*"("*beta[~D]^(gamma*"¡ú"*tau)*")")] * ")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "E") +
   theme_bw() +
@@ -338,8 +338,8 @@ alpha_5yr.plot <- ggplot(NEON_stab_5yr.data, aes(y = alpha_sta, x = alpha_div)) 
   geom_point(shape = 21, size = 3.5, colour = "#0072B2", fill = "#0072B2", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="#0072B2") +
-  ylab(bquote(paste(alpha*" stability ("*NULL[paste(log[10]*"("*alpha[S]*")")]*")"))) +
-  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(log[10]*"("*alpha[D]*")")]*")"))) +
+  ylab(bquote(paste(alpha*" stability ("*NULL[paste(ln*"("*alpha[S]*")")]*")"))) +
+  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(ln*"("*alpha[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "A") +
   theme_bw() +
@@ -359,8 +359,8 @@ gamma_5yr.plot <- ggplot(NEON_stab_5yr.data, aes(y = gamma_sta, x = gamma_div)) 
   geom_point(shape = 21, size = 3.5, colour = "#D55E00", fill = "#D55E00", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="#D55E00") +
-  ylab(bquote(paste(gamma*" stability ("*NULL[paste(log[10]*"("*gamma[S]*")")]*")"))) +
-  xlab(bquote(paste(gamma*" diversity ("*NULL[paste(log[10]*"("*gamma[D]*")")]*")"))) +
+  ylab(bquote(paste(gamma*" stability ("*NULL[paste(ln*"("*gamma[S]*")")]*")"))) +
+  xlab(bquote(paste(gamma*" diversity ("*NULL[paste(ln*"("*gamma[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "B") +
   theme_bw() +
@@ -380,8 +380,8 @@ tau_5yr.plot <- ggplot(NEON_stab_5yr.data, aes(y = tau_sta, x = tau_div)) +
   geom_point(shape = 21, size = 3.5, colour = "#009E73", fill = "#009E73", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="#009E73") +
-  ylab(bquote(paste(tau*" stability ("*NULL[paste(log[10]*"("*tau[S]*")")]*")"))) +
-  xlab(bquote(paste(tau*" diversity ("*NULL[paste(log[10]*"("*tau[D]*")")]*")"))) +
+  ylab(bquote(paste(tau*" stability ("*NULL[paste(ln*"("*tau[S]*")")]*")"))) +
+  xlab(bquote(paste(tau*" diversity ("*NULL[paste(ln*"("*tau[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "C") +
   theme_bw() +
@@ -401,8 +401,8 @@ beta1_5yr.plot <- ggplot(NEON_stab_5yr.data, aes(y = spa_asyn1, x = beta_div1)) 
   geom_point(shape = 21, size = 3.5, colour = "gray30", fill = "gray30", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="gray30") +
-  ylab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" stability ("*NULL[paste(log[10]*"("*beta[~S]^(alpha*"¡ú"*gamma)*")")]*")"))) +
-  xlab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" diversity ("*NULL[paste(log[10]*"("*beta[~D]^(alpha*"¡ú"*gamma)*")")]*")"))) +
+  ylab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" stability ("*NULL[paste(ln*"("*beta[~S]^(alpha*"¡ú"*gamma)*")")]*")"))) +
+  xlab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" diversity ("*NULL[paste(ln*"("*beta[~D]^(alpha*"¡ú"*gamma)*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "D") +
   theme_bw() +
@@ -422,8 +422,8 @@ beta2_5yr.plot <- ggplot(NEON_stab_5yr.data, aes(y = spa_asyn2, x = beta_div2)) 
   geom_point(shape = 21, size = 3.5, colour = "black", fill = "black", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="black") +
-  ylab(bquote(paste(beta^(gamma*"¡ú"*tau)*" stability ("*NULL[paste(log[10]*"("*beta[~S]^(gamma*"¡ú"*tau)*")")] * ")"))) +
-  xlab(bquote(paste(beta^(gamma*"¡ú"*tau)*" diversity ("*NULL[paste(log[10]*"("*beta[~D]^(gamma*"¡ú"*tau)*")")] * ")"))) +
+  ylab(bquote(paste(beta^(gamma*"¡ú"*tau)*" stability ("*NULL[paste(ln*"("*beta[~S]^(gamma*"¡ú"*tau)*")")] * ")"))) +
+  xlab(bquote(paste(beta^(gamma*"¡ú"*tau)*" diversity ("*NULL[paste(ln*"("*beta[~D]^(gamma*"¡ú"*tau)*")")] * ")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "E") +
   theme_bw() +
@@ -475,8 +475,8 @@ alpha_5yr_p.plot <- ggplot(NEON_stab_5yr_p.data, aes(y = alpha_sta_p, x = alpha_
   geom_point(shape = 21, size = 3.5, colour = "#0072B2", fill = "#0072B2", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="#0072B2") +
-  ylab(bquote(paste(alpha*" stability ("*NULL[paste(log[10]*"("*alpha[S]*")")]*")"))) +
-  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(log[10]*"("*alpha[D]*")")]*")"))) +
+  ylab(bquote(paste(alpha*" stability ("*NULL[paste(ln*"("*alpha[S]*")")]*")"))) +
+  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(ln*"("*alpha[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "A") +
   theme_bw() +
@@ -496,8 +496,8 @@ gamma_5yr_p.plot <- ggplot(NEON_stab_5yr_p.data, aes(y = gamma_sta_p, x = gamma_
   geom_point(shape = 21, size = 3.5, colour = "#D55E00", fill = "#D55E00", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="#D55E00") +
-  ylab(bquote(paste(gamma*" stability ("*NULL[paste(log[10]*"("*gamma[S]*")")]*")"))) +
-  xlab(bquote(paste(gamma*" diversity ("*NULL[paste(log[10]*"("*gamma[D]*")")]*")"))) +
+  ylab(bquote(paste(gamma*" stability ("*NULL[paste(ln*"("*gamma[S]*")")]*")"))) +
+  xlab(bquote(paste(gamma*" diversity ("*NULL[paste(ln*"("*gamma[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "B") +
   theme_bw() +
@@ -517,8 +517,8 @@ tau_5yr_p.plot <- ggplot(NEON_stab_5yr_p.data, aes(y = tau_sta_p, x = tau_div_p)
   geom_point(shape = 21, size = 3.5, colour = "#009E73", fill = "#009E73", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="#009E73") +
-  ylab(bquote(paste(tau*" stability ("*NULL[paste(log[10]*"("*tau[S]*")")]*")"))) +
-  xlab(bquote(paste(tau*" diversity ("*NULL[paste(log[10]*"("*tau[D]*")")]*")"))) +
+  ylab(bquote(paste(tau*" stability ("*NULL[paste(ln*"("*tau[S]*")")]*")"))) +
+  xlab(bquote(paste(tau*" diversity ("*NULL[paste(ln*"("*tau[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "C") +
   theme_bw() +
@@ -538,8 +538,8 @@ beta1_5yr_p.plot <- ggplot(NEON_stab_5yr_p.data, aes(y = spa_asyn1_p, x = beta_d
   geom_point(shape = 21, size = 3.5, colour = "gray30", fill = "gray30", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="gray30") +
-  ylab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" stability ("*NULL[paste(log[10]*"("*beta[~S]^(alpha*"¡ú"*gamma)*")")]*")"))) +
-  xlab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" diversity ("*NULL[paste(log[10]*"("*beta[~D]^(alpha*"¡ú"*gamma)*")")]*")"))) +
+  ylab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" stability ("*NULL[paste(ln*"("*beta[~S]^(alpha*"¡ú"*gamma)*")")]*")"))) +
+  xlab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" diversity ("*NULL[paste(ln*"("*beta[~D]^(alpha*"¡ú"*gamma)*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "D") +
   theme_bw() +
@@ -559,8 +559,8 @@ beta2_5yr_p.plot <- ggplot(NEON_stab_5yr_p.data, aes(y = spa_asyn2_p, x = beta_d
   geom_point(shape = 21, size = 3.5, colour = "black", fill = "black", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="black") +
-  ylab(bquote(paste(beta^(gamma*"¡ú"*tau)*" stability ("*NULL[paste(log[10]*"("*beta[~S]^(gamma*"¡ú"*tau)*")")] * ")"))) +
-  xlab(bquote(paste(beta^(gamma*"¡ú"*tau)*" diversity ("*NULL[paste(log[10]*"("*beta[~D]^(gamma*"¡ú"*tau)*")")] * ")"))) +
+  ylab(bquote(paste(beta^(gamma*"¡ú"*tau)*" stability ("*NULL[paste(ln*"("*beta[~S]^(gamma*"¡ú"*tau)*")")] * ")"))) +
+  xlab(bquote(paste(beta^(gamma*"¡ú"*tau)*" diversity ("*NULL[paste(ln*"("*beta[~D]^(gamma*"¡ú"*tau)*")")] * ")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "E") +
   theme_bw() +
@@ -586,8 +586,8 @@ alpha_6yr.plot <- ggplot(NEON_stab_6yr.data, aes(y = alpha_sta, x = alpha_div)) 
   geom_point(shape = 21, size = 3.5, colour = "#0072B2", fill = "#0072B2", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="#0072B2") +
-  ylab(bquote(paste(alpha*" stability ("*NULL[paste(log[10]*"("*alpha[S]*")")]*")"))) +
-  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(log[10]*"("*alpha[D]*")")]*")"))) +
+  ylab(bquote(paste(alpha*" stability ("*NULL[paste(ln*"("*alpha[S]*")")]*")"))) +
+  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(ln*"("*alpha[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "A") +
   theme_bw() +
@@ -607,8 +607,8 @@ gamma_6yr.plot <- ggplot(NEON_stab_6yr.data, aes(y = gamma_sta, x = gamma_div)) 
   geom_point(shape = 21, size = 3.5, colour = "#D55E00", fill = "#D55E00", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="#D55E00") +
-  ylab(bquote(paste(gamma*" stability ("*NULL[paste(log[10]*"("*gamma[S]*")")]*")"))) +
-  xlab(bquote(paste(gamma*" diversity ("*NULL[paste(log[10]*"("*gamma[D]*")")]*")"))) +
+  ylab(bquote(paste(gamma*" stability ("*NULL[paste(ln*"("*gamma[S]*")")]*")"))) +
+  xlab(bquote(paste(gamma*" diversity ("*NULL[paste(ln*"("*gamma[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "B") +
   theme_bw() +
@@ -628,8 +628,8 @@ tau_6yr.plot <- ggplot(NEON_stab_6yr.data, aes(y = tau_sta, x = tau_div)) +
   geom_point(shape = 21, size = 3.5, colour = "#009E73", fill = "#009E73", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="#009E73") +
-  ylab(bquote(paste(tau*" stability ("*NULL[paste(log[10]*"("*tau[S]*")")]*")"))) +
-  xlab(bquote(paste(tau*" diversity ("*NULL[paste(log[10]*"("*tau[D]*")")]*")"))) +
+  ylab(bquote(paste(tau*" stability ("*NULL[paste(ln*"("*tau[S]*")")]*")"))) +
+  xlab(bquote(paste(tau*" diversity ("*NULL[paste(ln*"("*tau[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "C") +
   theme_bw() +
@@ -649,8 +649,8 @@ beta1_6yr.plot <- ggplot(NEON_stab_6yr.data, aes(y = spa_asyn1, x = beta_div1)) 
   geom_point(shape = 21, size = 3.5, colour = "gray30", fill = "gray30", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="gray30") +
-  ylab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" stability ("*NULL[paste(log[10]*"("*beta[~S]^(alpha*"¡ú"*gamma)*")")]*")"))) +
-  xlab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" diversity ("*NULL[paste(log[10]*"("*beta[~D]^(alpha*"¡ú"*gamma)*")")]*")"))) +
+  ylab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" stability ("*NULL[paste(ln*"("*beta[~S]^(alpha*"¡ú"*gamma)*")")]*")"))) +
+  xlab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" diversity ("*NULL[paste(ln*"("*beta[~D]^(alpha*"¡ú"*gamma)*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "D") +
   theme_bw() +
@@ -670,8 +670,8 @@ beta2_6yr.plot <- ggplot(NEON_stab_6yr.data, aes(y = spa_asyn2, x = beta_div2)) 
   geom_point(shape = 21, size = 3.5, colour = "black", fill = "black", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="black", linetype ="dashed", se=F) +
-  ylab(bquote(paste(beta^(gamma*"¡ú"*tau)*" stability ("*NULL[paste(log[10]*"("*beta[~S]^(gamma*"¡ú"*tau)*")")] * ")"))) +
-  xlab(bquote(paste(beta^(gamma*"¡ú"*tau)*" diversity ("*NULL[paste(log[10]*"("*beta[~D]^(gamma*"¡ú"*tau)*")")] * ")"))) +
+  ylab(bquote(paste(beta^(gamma*"¡ú"*tau)*" stability ("*NULL[paste(ln*"("*beta[~S]^(gamma*"¡ú"*tau)*")")] * ")"))) +
+  xlab(bquote(paste(beta^(gamma*"¡ú"*tau)*" diversity ("*NULL[paste(ln*"("*beta[~D]^(gamma*"¡ú"*tau)*")")] * ")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "E") +
   theme_bw() +
@@ -723,8 +723,8 @@ alpha_6yr_p.plot <- ggplot(NEON_stab_6yr_p.data, aes(y = alpha_sta_p, x = alpha_
   geom_point(shape = 21, size = 3.5, colour = "#0072B2", fill = "#0072B2", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="#0072B2") +
-  ylab(bquote(paste(alpha*" stability ("*NULL[paste(log[10]*"("*alpha[S]*")")]*")"))) +
-  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(log[10]*"("*alpha[D]*")")]*")"))) +
+  ylab(bquote(paste(alpha*" stability ("*NULL[paste(ln*"("*alpha[S]*")")]*")"))) +
+  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(ln*"("*alpha[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "A") +
   theme_bw() +
@@ -744,8 +744,8 @@ gamma_6yr_p.plot <- ggplot(NEON_stab_6yr_p.data, aes(y = gamma_sta_p, x = gamma_
   geom_point(shape = 21, size = 3.5, colour = "#D55E00", fill = "#D55E00", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="#D55E00") +
-  ylab(bquote(paste(gamma*" stability ("*NULL[paste(log[10]*"("*gamma[S]*")")]*")"))) +
-  xlab(bquote(paste(gamma*" diversity ("*NULL[paste(log[10]*"("*gamma[D]*")")]*")"))) +
+  ylab(bquote(paste(gamma*" stability ("*NULL[paste(ln*"("*gamma[S]*")")]*")"))) +
+  xlab(bquote(paste(gamma*" diversity ("*NULL[paste(ln*"("*gamma[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "B") +
   theme_bw() +
@@ -765,8 +765,8 @@ tau_6yr_p.plot <- ggplot(NEON_stab_6yr_p.data, aes(y = tau_sta_p, x = tau_div_p)
   geom_point(shape = 21, size = 3.5, colour = "#009E73", fill = "#009E73", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="#009E73") +
-  ylab(bquote(paste(tau*" stability ("*NULL[paste(log[10]*"("*tau[S]*")")]*")"))) +
-  xlab(bquote(paste(tau*" diversity ("*NULL[paste(log[10]*"("*tau[D]*")")]*")"))) +
+  ylab(bquote(paste(tau*" stability ("*NULL[paste(ln*"("*tau[S]*")")]*")"))) +
+  xlab(bquote(paste(tau*" diversity ("*NULL[paste(ln*"("*tau[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "C") +
   theme_bw() +
@@ -786,8 +786,8 @@ beta1_6yr_p.plot <- ggplot(NEON_stab_6yr_p.data, aes(y = spa_asyn1_p, x = beta_d
   geom_point(shape = 21, size = 3.5, colour = "gray30", fill = "gray30", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="gray30") +
-  ylab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" stability ("*NULL[paste(log[10]*"("*beta[~S]^(alpha*"¡ú"*gamma)*")")]*")"))) +
-  xlab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" diversity ("*NULL[paste(log[10]*"("*beta[~D]^(alpha*"¡ú"*gamma)*")")]*")"))) +
+  ylab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" stability ("*NULL[paste(ln*"("*beta[~S]^(alpha*"¡ú"*gamma)*")")]*")"))) +
+  xlab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" diversity ("*NULL[paste(ln*"("*beta[~D]^(alpha*"¡ú"*gamma)*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "D") +
   theme_bw() +
@@ -807,8 +807,8 @@ beta2_6yr_p.plot <- ggplot(NEON_stab_6yr_p.data, aes(y = spa_asyn2_p, x = beta_d
   geom_point(shape = 21, size = 3.5, colour = "black", fill = "black", alpha = 0.5) +
   #geom_smooth(aes(group = 1), method = "lm", formula = y ~ poly(x, 2), size = 1, colour ="red", se=F) +
   geom_smooth(aes(group = 1), method = "lm", formula = y ~ x, size = 1.5, colour ="black") +
-  ylab(bquote(paste(beta^(gamma*"¡ú"*tau)*" stability ("*NULL[paste(log[10]*"("*beta[~S]^(gamma*"¡ú"*tau)*")")] * ")"))) +
-  xlab(bquote(paste(beta^(gamma*"¡ú"*tau)*" diversity ("*NULL[paste(log[10]*"("*beta[~D]^(gamma*"¡ú"*tau)*")")] * ")"))) +
+  ylab(bquote(paste(beta^(gamma*"¡ú"*tau)*" stability ("*NULL[paste(ln*"("*beta[~S]^(gamma*"¡ú"*tau)*")")] * ")"))) +
+  xlab(bquote(paste(beta^(gamma*"¡ú"*tau)*" diversity ("*NULL[paste(ln*"("*beta[~D]^(gamma*"¡ú"*tau)*")")] * ")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "E") +
   theme_bw() +

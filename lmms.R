@@ -71,8 +71,8 @@ alpha_alpha_sta_4yr.plot <- ggplot(NEON_stab_plots_4yr.data, aes(y = alpha_sta, 
               aes(y = NULL, ymin = lower, ymax = upper, color = NULL), alpha = .15) +  # add Confidence interval
   scale_fill_manual(values=c("gray")) + # fill the color
   geom_line(data = alpha_alpha_sta_4yr_newdat.lme, aes(y = predlme), size = 1.5, color = "black") +
-  ylab(bquote(paste(alpha*" stability ("*NULL[paste(log[10]*"("*alpha[S]*")")]*")"))) +
-  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(log[10]*"("*alpha[D]*")")]*")"))) +
+  ylab(bquote(paste(alpha*" stability ("*NULL[paste(ln*"("*alpha[S]*")")]*")"))) +
+  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(ln*"("*alpha[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "A") +
   annotate("text", x = 2, y = -0.1, size = 4, family = "Arial", 
@@ -114,8 +114,8 @@ beta1_spa_asy1_4yr.plot <- ggplot(NEON_stab_plots_4yr.data, aes(y = spa_asy1, x 
               alpha = .15) +  # add Confidence interval
   scale_fill_manual(values=c("gray")) + # fill the color
   geom_line(data = beta1_spa_asy1_4yr_newdat.lme, aes(y = predlme), size = 1.5, color = "black") +
-  ylab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" stability ("*NULL[paste(log[10]*"("*beta[~S]^(alpha*"¡ú"*gamma)*")")]*")"))) +
-  xlab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" diversity ("*NULL[paste(log[10]*"("*beta[~D]^(alpha*"¡ú"*gamma)*")")]*")"))) +
+  ylab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" stability ("*NULL[paste(ln*"("*beta[~S]^(alpha*"¡ú"*gamma)*")")]*")"))) +
+  xlab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" diversity ("*NULL[paste(ln*"("*beta[~D]^(alpha*"¡ú"*gamma)*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "B") +
   #xlim(0, 2) +
@@ -158,8 +158,8 @@ gamma_gamma_sta_4yr.plot <- ggplot(NEON_stab_plots_4yr.data, aes(y = gamma_sta, 
               alpha = .15) +  # add Confidence interval
   scale_fill_manual(values=c("gray")) + # fill the color
   geom_line(data = gamma_gamma_sta_4yr_newdat.lme, aes(y = predlme), size = 1.5, color = "black") +
-  ylab(bquote(paste(gamma*" stability ("*NULL[paste(log[10]*"("*gamma[S]*")")]*")"))) +
-  xlab(bquote(paste(gamma*" diversity ("*NULL[paste(log[10]*"("*gamma[D]*")")]*")"))) +
+  ylab(bquote(paste(gamma*" stability ("*NULL[paste(ln*"("*gamma[S]*")")]*")"))) +
+  xlab(bquote(paste(gamma*" diversity ("*NULL[paste(ln*"("*gamma[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "C") +
   annotate("text", x = 0.9, y = 4.3, size = 4, family = "Arial", 
@@ -200,8 +200,8 @@ alpha_spe_sta_4yr.plot <- ggplot(NEON_stab_plots_4yr.data, aes(y = spe_sta, x = 
   #aes(y = NULL, ymin = lower, ymax = upper, color = NULL), alpha = .15) +  # add Confidence interval
   #scale_fill_manual(values=c("gray")) + # fill the color
   geom_line(data = alpha_spe_sta_4yr_newdat.lme, aes(y = predlme), size = 1.5, color = "black", linetype ="dashed") +
-  ylab(bquote(paste("Species stability ("*NULL[paste(log[10])]*")"))) +
-  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(log[10]*"("*alpha[D]*")")]*")"))) +
+  ylab(bquote(paste("Species stability ("*NULL[paste("ln-transformed")]*")"))) +
+  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(ln*"("*alpha[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "A") +
   annotate("text", x = 2.1, y = 1.0, size = 4, family = "Arial", 
@@ -242,8 +242,8 @@ alpha_spe_asy_4yr.plot <- ggplot(NEON_stab_plots_4yr.data, aes(y = spe_asy, x = 
               aes(y = NULL, ymin = lower, ymax = upper, color = NULL), alpha = .15) +  # add Confidence interval
   scale_fill_manual(values=c("gray")) + # fill the color
   geom_line(data = alpha_spe_asy_4yr_newdat.lme, aes(y = predlme), size = 1.5, color = "black") +
-  ylab(bquote(paste("Species asynchrony ("*NULL[paste(log[10])]*")"))) +
-  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(log[10]*"("*alpha[D]*")")]*")"))) +
+  ylab(bquote(paste("Species asynchrony ("*NULL[paste("ln-transformed")]*")"))) +
+  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(ln*"("*alpha[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "B") +
   annotate("text", x = 1.5, y = 2.1, size = 4, family = "Arial", 
@@ -289,8 +289,8 @@ alpha_alpha_sta_5yr.plot <- ggplot(NEON_stab_plots_5yr.data, aes(y = alpha_sta, 
               aes(y = NULL, ymin = lower, ymax = upper, color = NULL), alpha = .15) +  # add Confidence interval
   scale_fill_manual(values=c("gray")) + # fill the color
   geom_line(data = alpha_alpha_sta_5yr_newdat.lme, aes(y = predlme), size = 1.5, color = "black") +
-  ylab(bquote(paste(alpha*" stability ("*NULL[paste(log[10]*"("*alpha[S]*")")]*")"))) +
-  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(log[10]*"("*alpha[D]*")")]*")"))) +
+  ylab(bquote(paste(alpha*" stability ("*NULL[paste(ln*"("*alpha[S]*")")]*")"))) +
+  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(ln*"("*alpha[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "A") +
   annotate("text", x = 2, y = -0.1, size = 4, family = "Arial", 
@@ -332,8 +332,8 @@ beta1_spa_asy1_5yr.plot <- ggplot(NEON_stab_plots_5yr.data, aes(y = spa_asy1, x 
               alpha = .15) +  # add Confidence interval
   scale_fill_manual(values=c("gray")) + # fill the color
   geom_line(data = beta1_spa_asy1_5yr_newdat.lme, aes(y = predlme), size = 1.5, color = "black") +
-  ylab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" stability ("*NULL[paste(log[10]*"("*beta[~S]^(alpha*"¡ú"*gamma)*")")]*")"))) +
-  xlab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" diversity ("*NULL[paste(log[10]*"("*beta[~D]^(alpha*"¡ú"*gamma)*")")]*")"))) +
+  ylab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" stability ("*NULL[paste(ln*"("*beta[~S]^(alpha*"¡ú"*gamma)*")")]*")"))) +
+  xlab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" diversity ("*NULL[paste(ln*"("*beta[~D]^(alpha*"¡ú"*gamma)*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "B") +
   #xlim(0, 2) +
@@ -376,8 +376,8 @@ gamma_gamma_sta_5yr.plot <- ggplot(NEON_stab_plots_5yr.data, aes(y = gamma_sta, 
               alpha = .15) +  # add Confidence interval
   scale_fill_manual(values=c("gray")) + # fill the color
   geom_line(data = gamma_gamma_sta_5yr_newdat.lme, aes(y = predlme), size = 1.5, color = "black") +
-  ylab(bquote(paste(gamma*" stability ("*NULL[paste(log[10]*"("*gamma[S]*")")]*")"))) +
-  xlab(bquote(paste(gamma*" diversity ("*NULL[paste(log[10]*"("*gamma[D]*")")]*")"))) +
+  ylab(bquote(paste(gamma*" stability ("*NULL[paste(ln*"("*gamma[S]*")")]*")"))) +
+  xlab(bquote(paste(gamma*" diversity ("*NULL[paste(ln*"("*gamma[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "C") +
   annotate("text", x = 0.9, y = 4.3, size = 4, family = "Arial", 
@@ -418,8 +418,8 @@ alpha_spe_sta_5yr.plot <- ggplot(NEON_stab_plots_5yr.data, aes(y = spe_sta, x = 
   #aes(y = NULL, ymin = lower, ymax = upper, color = NULL), alpha = .15) +  # add Confidence interval
   #scale_fill_manual(values=c("gray")) + # fill the color
   geom_line(data = alpha_spe_sta_5yr_newdat.lme, aes(y = predlme), size = 1.5, color = "black", linetype ="dashed") +
-  ylab(bquote(paste("Species stability ("*NULL[paste(log[10])]*")"))) +
-  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(log[10]*"("*alpha[D]*")")]*")"))) +
+  ylab(bquote(paste("Species stability ("*NULL[paste("ln-transformed")]*")"))) +
+  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(ln*"("*alpha[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "D") +
   annotate("text", x = 2.1, y = 1.0, size = 4, family = "Arial", 
@@ -460,8 +460,8 @@ alpha_spe_asy_5yr.plot <- ggplot(NEON_stab_plots_5yr.data, aes(y = spe_asy, x = 
               aes(y = NULL, ymin = lower, ymax = upper, color = NULL), alpha = .15) +  # add Confidence interval
   scale_fill_manual(values=c("gray")) + # fill the color
   geom_line(data = alpha_spe_asy_5yr_newdat.lme, aes(y = predlme), size = 1.5, color = "black") +
-  ylab(bquote(paste("Species asynchrony ("*NULL[paste(log[10])]*")"))) +
-  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(log[10]*"("*alpha[D]*")")]*")"))) +
+  ylab(bquote(paste("Species asynchrony ("*NULL[paste("ln-transformed")]*")"))) +
+  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(ln*"("*alpha[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "E") +
   annotate("text", x = 1.5, y = 2.1, size = 4, family = "Arial", 
@@ -506,8 +506,8 @@ alpha_alpha_sta_6yr.plot <- ggplot(NEON_stab_plots_6yr.data, aes(y = alpha_sta, 
               aes(y = NULL, ymin = lower, ymax = upper, color = NULL), alpha = .15) +  # add Confidence interval
   scale_fill_manual(values=c("gray")) + # fill the color
   geom_line(data = alpha_alpha_sta_6yr_newdat.lme, aes(y = predlme), size = 1.5, color = "black") +
-  ylab(bquote(paste(alpha*" stability ("*NULL[paste(log[10]*"("*alpha[S]*")")]*")"))) +
-  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(log[10]*"("*alpha[D]*")")]*")"))) +
+  ylab(bquote(paste(alpha*" stability ("*NULL[paste(ln*"("*alpha[S]*")")]*")"))) +
+  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(ln*"("*alpha[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "A") +
   annotate("text", x = 2, y = -0.1, size = 4, family = "Arial", 
@@ -549,8 +549,8 @@ beta1_spa_asy1_6yr.plot <- ggplot(NEON_stab_plots_6yr.data, aes(y = spa_asy1, x 
   #alpha = .15) +  # add Confidence interval
   #scale_fill_manual(values=c("gray")) + # fill the color
   geom_line(data = beta1_spa_asy1_6yr_newdat.lme, aes(y = predlme), size = 1.5, color = "black", linetype ="dashed") +
-  ylab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" stability ("*NULL[paste(log[10]*"("*beta[~S]^(alpha*"¡ú"*gamma)*")")]*")"))) +
-  xlab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" diversity ("*NULL[paste(log[10]*"("*beta[~D]^(alpha*"¡ú"*gamma)*")")]*")"))) +
+  ylab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" stability ("*NULL[paste(ln*"("*beta[~S]^(alpha*"¡ú"*gamma)*")")]*")"))) +
+  xlab(bquote(paste(beta^(alpha*"¡ú"*gamma)*" diversity ("*NULL[paste(ln*"("*beta[~D]^(alpha*"¡ú"*gamma)*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "B") +
   #xlim(0, 2) +
@@ -593,8 +593,8 @@ gamma_gamma_sta_6yr.plot <- ggplot(NEON_stab_plots_6yr.data, aes(y = gamma_sta, 
               alpha = .15) +  # add Confidence interval
   scale_fill_manual(values=c("gray")) + # fill the color
   geom_line(data = gamma_gamma_sta_6yr_newdat.lme, aes(y = predlme), size = 1.5, color = "black") +
-  ylab(bquote(paste(gamma*" stability ("*NULL[paste(log[10]*"("*gamma[S]*")")]*")"))) +
-  xlab(bquote(paste(gamma*" diversity ("*NULL[paste(log[10]*"("*gamma[D]*")")]*")"))) +
+  ylab(bquote(paste(gamma*" stability ("*NULL[paste(ln*"("*gamma[S]*")")]*")"))) +
+  xlab(bquote(paste(gamma*" diversity ("*NULL[paste(ln*"("*gamma[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "C") +
   annotate("text", x = 0.9, y = 4.3, size = 4, family = "Arial", 
@@ -635,8 +635,8 @@ alpha_spe_sta_6yr.plot <- ggplot(NEON_stab_plots_6yr.data, aes(y = spe_sta, x = 
   #aes(y = NULL, ymin = lower, ymax = upper, color = NULL), alpha = .15) +  # add Confidence interval
   #scale_fill_manual(values=c("gray")) + # fill the color
   geom_line(data = alpha_spe_sta_6yr_newdat.lme, aes(y = predlme), size = 1.5, color = "black", linetype ="dashed") +
-  ylab(bquote(paste("Species stability ("*NULL[paste(log[10])]*")"))) +
-  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(log[10]*"("*alpha[D]*")")]*")"))) +
+  ylab(bquote(paste("Species stability ("*NULL[paste("ln-transformed")]*")"))) +
+  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(ln*"("*alpha[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "D") +
   annotate("text", x = 2.1, y = 1.0, size = 4, family = "Arial", 
@@ -677,8 +677,8 @@ alpha_spe_asy_6yr.plot <- ggplot(NEON_stab_plots_6yr.data, aes(y = spe_asy, x = 
               aes(y = NULL, ymin = lower, ymax = upper, color = NULL), alpha = .15) +  # add Confidence interval
   scale_fill_manual(values=c("gray")) + # fill the color
   geom_line(data = alpha_spe_asy_6yr_newdat.lme, aes(y = predlme), size = 1.5, color = "black") +
-  ylab(bquote(paste("Species asynchrony ("*NULL[paste(log[10])]*")"))) +
-  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(log[10]*"("*alpha[D]*")")]*")"))) +
+  ylab(bquote(paste("Species asynchrony ("*NULL[paste("ln-transformed")]*")"))) +
+  xlab(bquote(paste(alpha*" diversity ("*NULL[paste(ln*"("*alpha[D]*")")]*")"))) +
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "E") +
   annotate("text", x = 1.5, y = 2.1, size = 4, family = "Arial", 
