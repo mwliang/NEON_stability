@@ -28,6 +28,7 @@ my_scale <- function(x){
 ############################################
 # 1 for >= 4-year observations (N=36)
 NEON_stab_4yr.data <- NEON_stab.data
+
 data_4yr <- NEON_stab_4yr.data
 
 # 1.1 mean annual precipitation (MAP) (Figs. 4D-4F, Extended Data Fig. 7, Supplementary Table 8)
@@ -49,7 +50,7 @@ for (i in 19:33){
   all_MAP_4yr.result <- rbind(all_MAP_4yr.result, d)
 }
 colnames(all_MAP_4yr.result) <- c("variable", "estimate", "se", "t value", "p", "r2m", "r2c")
-#write.csv(all_MAP_4yr.result, file = "all_MAP_effects_4yr.csv")
+write.csv(all_MAP_4yr.result, file = "all_MAP_effects_4yr.csv")
 
 # 1.2 mean annual temperature (MAT) (Figs. 4D-4F, Extended Data Fig. 7, Supplementary Table 9)
 # the significant (P < 0.05) effects on diversity
@@ -68,7 +69,7 @@ for (i in 19:33){
   all_MAT_4yr.result <- rbind(all_MAT_4yr.result, d)
 }
 colnames(all_MAT_4yr.result) <- c("variable", "estimate", "se", "t value", "p", "r2m", "r2c")
-#write.csv(all_MAT_4yr.result, file = "all_MAT_effects_4yr.csv")
+write.csv(all_MAT_4yr.result, file = "all_MAT_effects_4yr.csv")
 
 # 1.3 precipitation seasonality (Prec_s) (Figs. 4D-4F, Extended Data Fig. 7, Supplementary Table 10)
 # the significant (P < 0.05) effects on diversity
@@ -92,7 +93,7 @@ for (i in 19:33){
   all_Prec_s_4yr.result <- rbind(all_Prec_s_4yr.result, d)
 }
 colnames(all_Prec_s_4yr.result) <- c("variable", "estimate", "se", "t value", "p", "r2m", "r2c")
-#write.csv(all_Prec_s_4yr.result, file = "all_Prec_s_effects_4yr.csv")
+write.csv(all_Prec_s_4yr.result, file = "all_Prec_s_effects_4yr.csv")
 
 # 1.4 temperature seasonality (Temp_s) (Figs. 4D-4F, Extended Data Fig. 7, Supplementary Table 11)
 # the significant (P < 0.05) effects on diversity
@@ -110,7 +111,7 @@ for (i in 19:33){
   all_Temp_s_4yr.result <- rbind(all_Temp_s_4yr.result, d)
 }
 colnames(all_Temp_s_4yr.result) <- c("variable", "estimate", "se", "t value", "p", "r2m", "r2c")
-#write.csv(all_Temp_s_4yr.result, file = "all_Temp_s_effects_4yr.csv")
+write.csv(all_Temp_s_4yr.result, file = "all_Temp_s_effects_4yr.csv")
 
 # 1.5 the number of plots (no.plot) (Supplementary Table 12)
 # the significant (P < 0.05) effects on diversity
@@ -126,10 +127,10 @@ for (i in 19:30){
   each.fit <- lm(each.depend ~ my_scale(each.x))
   each.result <- summary(each.fit)$coefficients[2, 1:4]; r2 <- r.squaredGLMM(each.fit)
   d <- c(colnames(data_4yr)[i], each.result, r2)
-  all_N.result <- rbind(all_N.result, d)
+  all_N_4yr.result <- rbind(all_N_4yr.result, d)
 }
 colnames(all_N_4yr.result) <- c("variable", "estimate", "se", "t value", "p", "r2m", "r2c")
-#write.csv(all_N_4yr.result, file = "all_N_effects_4yr.csv")
+write.csv(all_N_4yr.result, file = "all_N_effects_4yr.csv")
 
 # 1.6 the average spatial distance of pairwise plots (spa_dist) (Supplementary Table 13)
 
@@ -276,7 +277,7 @@ colnames(all_MAP_5yr.result) <- c("variable", "estimate", "se", "t value", "p", 
 
 # 2.2 mean annual temperature (MAT) 
 # the significant (P < 0.05) effects on diversity
-summary(lm(beta_div1 ~ my_scale(MAT_C)*my_scale(MAP_mm), data = NEON_stab_5yr.data))
+summary(lm(beta_div1 ~ my_scale(MAT_C), data = NEON_stab_5yr.data))
 
 all_MAT_5yr.result <- c()
 for (i in 19:33){
@@ -292,8 +293,9 @@ colnames(all_MAT_5yr.result) <- c("variable", "estimate", "se", "t value", "p", 
 
 # 2.3 precipitation seasonality (Prec_s) 
 # the significant (P < 0.05) effects on stability
-summary(lm(spa_asyn2 ~ my_scale(Prec_s), data = NEON_stab_5yr.data))
+summary(lm(spa_asyn1 ~ my_scale(Prec_s), data = NEON_stab_5yr.data))
 # the significant (P < 0.05) effects on the slopes of diversity-stability relationships
+summary(lm(slope_alpha_sta.alpha_div ~ my_scale(Prec_s), data = NEON_stab_5yr.data))
 summary(lm(slope_gamma_sta.gamma_div ~ my_scale(Prec_s), data = NEON_stab_5yr.data))
 
 all_Prec_s_5yr.result <- c()
@@ -333,8 +335,7 @@ summary(lm(gamma_div ~ my_scale(no.plot), data = NEON_stab_5yr.data))
 summary(lm(tau_div ~ my_scale(no.plot), data = NEON_stab_5yr.data))
 # the significant (P < 0.05) effects on stability
 summary(lm(spe_sta ~ my_scale(no.plot), data = NEON_stab_5yr.data))
-# the significant (P < 0.05) effects on the slopes of diversity-stability relationships
-summary(lm(slope_alpha_sta.alpha_div ~ my_scale(no.plot), data = NEON_stab_5yr.data))
+
 
 all_N_5yr.result <- c()
 for (i in 19:30){
@@ -482,6 +483,7 @@ colnames(all_spa_dis_6yr.result) <- c("variable", "estimate", "se", "t value", "
 
 # 3.7 the duration of data collection (duration) 
 # the significant (P < 0.05) effects on diversity
+summary(lm(beta_div1 ~ my_scale(duration), data = NEON_stab_6yr.data))
 summary(lm(beta_div2 ~ my_scale(duration), data = NEON_stab_6yr.data))
 
 all_duration_6yr.result <- c()

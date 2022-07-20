@@ -7,7 +7,7 @@ state,US state abbreviations
 latitude,latitude
 longitude,longitude
 elevation_m,elevation_m
-MAT_C,mean annual temperature (oC)
+MAT_C,mean annual temperature (°„C)
 MAP_mm,mean annual precipitation (mm)
 Temp_s,temperature seasonality (sd*100)
 Prec_s,precipitation seasonality (cv)
@@ -15,16 +15,16 @@ started_year,the first year data collected in this study
 end_year,the last year data collected in this study
 duration,the duration of data collection in this study
 no.plot,number of plots
-spa_dist,spatial distance between two plots (km)
+spa_dist,mean distance of pairwise plots (km)
 alpha_div,alpha richness at 1m2 quadrat
-beta_div1,beta diversity within-plots
+beta_div1,beta diversity 1 across-quadrat
 gamma_div,gamma richness at 400 m2 plot
-beta_div2,beta diversity across-plots
+beta_div2,beta diversity 2 across-plot
 tau_div,tau richness at ~km2 sites
 spe_sta,species stability 
 spe_asyn,species asynchrony
 alpha_sta,alpha stability at 1m2 quadrat
-spa_asyn1,beta stability across-quadrat
+spa_asyn1,beta stability 1 across-quadrat
 gamma_sta,gamma stability at 400 m2 plot
 spa_asyn2,beta stability 2 across-plot
 tau_sta,tau stability at ~km2 sites

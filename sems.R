@@ -51,7 +51,7 @@ SEM.m <- psem(
 summary(SEM.m) # Note that all pathway were significant.
 fisherC(SEM.m) # Note that SEM.m was unsaturated (Fisher.c > df) and its significant estimations were very well with p > 0.05.
 AIC(SEM.m)
-dSep(SEM.m) # Note that SEM.m also did not miss any significant pathways.
+dSep(SEM.m) # Note that SEM.m did not miss any significant pathways.
 
 
 # second, based on the empirical bivariate relationships of climatic factors to diversity and stability.
@@ -94,8 +94,6 @@ SEM_env1.m <- psem(
 summary(SEM_env1.m) # Note that there were non-significant pathways.
 fisherC(SEM_env1.m) # Note that SEM_env1.m was still unsaturated (Fisher.c > df) and its significant estimations were very well with p > 0.05.
 AIC(SEM_env1.m)
-dSep(SEM_env1.m) # Note that SEM_env1.m did have a missing significant pathway.
-
 
 
 # And then, we fitted the SEM_env2.m without these non-significant pathways.
@@ -124,7 +122,6 @@ SEM_env2.m <- psem(
 summary(SEM_env2.m) # Note that all pathway were significant.
 fisherC(SEM_env2.m) # Note that SEM_env2.m was still unsaturated (Fisher.c > df) and its significant estimations were very well with p > 0.05.
 AIC(SEM_env2.m)
-dSep(SEM_env2.m) # Note that SEM_env2.m did not have any missing significant pathway.
 
 
 
@@ -155,10 +152,10 @@ SEM_env3.m <- psem(
 summary(SEM_env3.m) # Note that all pathway were significant.
 fisherC(SEM_env3.m) # Note that SEM_env3.m was still unsaturated (Fisher.c > df) and its significant estimations were very well with p > 0.05.
 AIC(SEM_env3.m) 
-dSep(SEM_env3.m) # Note that SEM_env3.m did not have any missing significant pathway.
 
 # Note that all estimations of SEM_env3.m (Std.Estimate, Fisher.c, p, and AIC) were consistent with that of SEM_env2.m.
-# We can chose SEM_env3.m as our finial SEM!
+# Thus, We can chose SEM_env3.m as our finial SEM!
+
 
 ##############################################################################################################
 ##############################################################################################################

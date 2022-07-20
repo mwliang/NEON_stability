@@ -76,7 +76,7 @@ alpha_alpha_sta_4yr.plot <- ggplot(NEON_stab_plots_4yr.data, aes(y = alpha_sta, 
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "A") +
   annotate("text", x = 2, y = -0.1, size = 4, family = "Arial", 
-           label ="paste(italic(R[m]^2), \" = 0.10 ***\")", parse=TRUE, hjust= 0) +
+           label ="paste(italic(R[m]^2), \" = 0.11 ***\")", parse=TRUE, hjust= 0) +
   annotate("text", x = 2, y = -0.45, size = 4, family = "Arial", 
            label ="paste(italic(R[c]^2), \" = 0.36 ***\")", parse=TRUE, hjust= 0) +
   theme_bw() +
@@ -163,7 +163,7 @@ gamma_gamma_sta_4yr.plot <- ggplot(NEON_stab_plots_4yr.data, aes(y = gamma_sta, 
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "C") +
   annotate("text", x = 0.9, y = 4.3, size = 4, family = "Arial", 
-           label ="paste(italic(R[m]^2), \" = 0.03 ***\")", parse=TRUE, hjust= 0) +
+           label ="paste(italic(R[m]^2), \" = 0.04 ***\")", parse=TRUE, hjust= 0) +
   annotate("text", x = 0.9, y = 3.5, size = 4, family = "Arial", 
            label ="paste(italic(R[c]^2), \" = 0.31 ***\")", parse=TRUE, hjust= 0) +
   theme_bw() +
@@ -294,9 +294,9 @@ alpha_alpha_sta_5yr.plot <- ggplot(NEON_stab_plots_5yr.data, aes(y = alpha_sta, 
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "A") +
   annotate("text", x = 2, y = -0.1, size = 4, family = "Arial", 
-           label ="paste(italic(R[m]^2), \" = 0.13 ***\")", parse=TRUE, hjust= 0) +
+           label ="paste(italic(R[m]^2), \" = 0.14 ***\")", parse=TRUE, hjust= 0) +
   annotate("text", x = 2, y = -0.45, size = 4, family = "Arial", 
-           label ="paste(italic(R[c]^2), \" = 0.37 ***\")", parse=TRUE, hjust= 0) +
+           label ="paste(italic(R[c]^2), \" = 0.38 ***\")", parse=TRUE, hjust= 0) +
   theme_bw() +
   my_theme
 
@@ -340,7 +340,7 @@ beta1_spa_asy1_5yr.plot <- ggplot(NEON_stab_plots_5yr.data, aes(y = spa_asy1, x 
   annotate("text", x = 0.2, y = 3.0, size = 4, family = "Arial", 
            label ="paste(italic(R[m]^2), \" = 0.01 *\")", parse=TRUE, hjust= 0) +
   annotate("text", x = 0.2, y = 2.5, size = 4, family = "Arial", 
-           label ="paste(italic(R[c]^2), \" = 0.27 *\")", parse=TRUE, hjust= 0) +
+           label ="paste(italic(R[c]^2), \" = 0.28 *\")", parse=TRUE, hjust= 0) +
   theme_bw() +
   my_theme
 
@@ -383,7 +383,7 @@ gamma_gamma_sta_5yr.plot <- ggplot(NEON_stab_plots_5yr.data, aes(y = gamma_sta, 
   annotate("text", x = 0.9, y = 4.3, size = 4, family = "Arial", 
            label ="paste(italic(R[m]^2), \" = 0.05 ***\")", parse=TRUE, hjust= 0) +
   annotate("text", x = 0.9, y = 3.5, size = 4, family = "Arial", 
-           label ="paste(italic(R[c]^2), \" = 0.34 ***\")", parse=TRUE, hjust= 0) +
+           label ="paste(italic(R[c]^2), \" = 0.33 ***\")", parse=TRUE, hjust= 0) +
   theme_bw() +
   my_theme
 
@@ -511,7 +511,7 @@ alpha_alpha_sta_6yr.plot <- ggplot(NEON_stab_plots_6yr.data, aes(y = alpha_sta, 
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "A") +
   annotate("text", x = 2, y = -0.1, size = 4, family = "Arial", 
-           label ="paste(italic(R[m]^2), \" = 0.15 ***\")", parse=TRUE, hjust= 0) +
+           label ="paste(italic(R[m]^2), \" = 0.16 ***\")", parse=TRUE, hjust= 0) +
   annotate("text", x = 2, y = -0.45, size = 4, family = "Arial", 
            label ="paste(italic(R[c]^2), \" = 0.41 ***\")", parse=TRUE, hjust= 0) +
   theme_bw() +
@@ -555,7 +555,7 @@ beta1_spa_asy1_6yr.plot <- ggplot(NEON_stab_plots_6yr.data, aes(y = spa_asy1, x 
   labs(tag = "B") +
   #xlim(0, 2) +
   annotate("text", x = 0.2, y = 3.0, size = 4, family = "Arial", 
-           label ="paste(italic(R[m]^2), \" = 0.009\")", parse=TRUE, hjust= 0) +
+           label ="paste(italic(R[m]^2), \" = 0.008\")", parse=TRUE, hjust= 0) +
   annotate("text", x = 0.2, y = 2.5, size = 4, family = "Arial", 
            label ="paste(italic(R[c]^2), \" = 0.33\")", parse=TRUE, hjust= 0) +
   theme_bw() +
@@ -640,7 +640,7 @@ alpha_spe_sta_6yr.plot <- ggplot(NEON_stab_plots_6yr.data, aes(y = spe_sta, x = 
   scale_y_continuous(labels=scaleFUN) +
   labs(tag = "D") +
   annotate("text", x = 2.1, y = 1.0, size = 4, family = "Arial", 
-           label ="paste(italic(R[m]^2), \" = 0.008\")", parse=TRUE, hjust= 0) +
+           label ="paste(italic(R[m]^2), \" = 0.01\")", parse=TRUE, hjust= 0) +
   annotate("text", x = 2.1, y = 0.75, size = 4, family = "Arial", 
            label ="paste(italic(R[c]^2), \" = 0.38\")", parse=TRUE, hjust= 0) +
   theme_bw() +
@@ -684,7 +684,7 @@ alpha_spe_asy_6yr.plot <- ggplot(NEON_stab_plots_6yr.data, aes(y = spe_asy, x = 
   annotate("text", x = 1.5, y = 2.1, size = 4, family = "Arial", 
            label ="paste(italic(R[m]^2), \" = 0.07 ***\")", parse=TRUE, hjust= 0) +
   annotate("text", x = 1.5, y = 1.8, size = 4, family = "Arial", 
-           label ="paste(italic(R[c]^2), \" = 0.64 ***\")", parse=TRUE, hjust= 0) +
+           label ="paste(italic(R[c]^2), \" = 0.67 ***\")", parse=TRUE, hjust= 0) +
   theme_bw() +
   my_theme
 
